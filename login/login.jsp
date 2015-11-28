@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<%@page contentType="text/html; charset=iso-8859-1" language="java" import="java.sql.*,java.util.*" errorPage="" %>
+<%@page import="bank.Bank" %>
+
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -28,6 +31,9 @@ String msg="";
 if(request.getParameter("msg")!=null){
 	msg=request.getParameter("msg").toString();
 }
+
+Bank bank = new Bank();
+java.util.Iterator bankList = bank.getBankList().iterator();
 %>
     <div class="container-fluid">
         <div class="row">
@@ -153,12 +159,11 @@ if(request.getParameter("msg")!=null){
 									</div>
 									<div class="form-group">
 				                            <select class="form-control" id="bank" name="bank">
-				                                <option>-- Select Bank --</option>
-				                                <option>Nabil Bank</option>
-				                                <option>Standard Chartered Bank</option>
-				                                <option>Sidhhartha Bank</option>
-				                                <option>Civil Bank</option>
-				                                <option>Nepal Bank</option>
+				                              <%while(bankList.hasNext()){ 
+				                              	HashMap tempMap = (HashMap) bankList.next();
+				                              %> 
+				                              <option value="<%=tempMap.get("bnkId")%>"><%=tempMap.get("bankDesc")%></option>
+				                              <%} %>
 				                            </select>
                    					</div>
                    					<div class="form-group">
