@@ -41,7 +41,7 @@
                     <div class="collapse navbar-collapse" id="myNavbar">
                         <ul class="nav navbar-nav pull-right">
                           <li class="active">
-                                <a href="#">Home</a>
+                                <a href=""<%=request.getContextPath() + "index.jsp"%>"">Home</a>
                             </li>
                             <li>
                                 <a href="#">About</a>
@@ -49,12 +49,7 @@
                             <li>
                                 <a href="#">Services</a>
                             </li>
-                            <li>
-                                <a href="./login/home.jsp">Price</a>
-                            </li>
-                            <li>
-                                <a href="#">Projects</a>
-                            </li> 
+> 
                             <!-- <li class="dropdown">
                                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                                     Pages

@@ -50,11 +50,9 @@
                                 <a href="#">Services</a>
                             </li>
                             <li>
-                                <a href="./login/login.jsp">Login/Sign Up</a>
+                                <a href="<%=request.getContextPath() + "/login/login.jsp"%>">Login/Sign Up</a>
                             </li>
-                            <li>
-                                <a href="#">Projects</a>
-                            </li> 
+                            
                             <!-- <li class="dropdown">
                                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                                     Pages
