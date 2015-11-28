@@ -140,13 +140,13 @@ java.util.Iterator bankList = bank.getBankList().iterator();
 								</form>
 								<form id="register-form" action="" method="post" role="form" style="display: none;">
 								<div class="form-group">
-										<input type="text" name="name" id="name" tabindex="1" class="form-control" placeholder="First Name" value="">
+										<input type="text" name="fname" id="fname" tabindex="1" class="form-control" placeholder="First Name" value="">
 								</div>
 								<div class="form-group">		
-										<input type="text" name="name" id="name" tabindex="1" class="form-control" placeholder="Middle Name (optional)" value="">
+										<input type="text" name="mname" id="mname" tabindex="1" class="form-control" placeholder="Middle Name (optional)" value="">
 								</div>
 								<div class="form-group">		
-										<input type="text" name="name" id="name" tabindex="1" class="form-control" placeholder="Last Name" value="">
+										<input type="text" name="lname" id="lname" tabindex="1" class="form-control" placeholder="Last Name" value="">
 									</div>
 									<div class="form-group">
 										<input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Username" value="">
