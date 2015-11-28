@@ -1,0 +1,113 @@
+     a:link {text-decoration: none; color: #000000}
+    a:visited {text-decoration: none; color: #000000}
+     a:hover {text-decoration: none;  color: #153296;} 
+     
+body {  
+scrollbar-highlight-color:#AAAAAA;
+scrollbar-shadow-color:#E8E3DF;
+scrollbar-arrow-color:#9F0A0E;
+scrollbar-base-color:#DDDDDD;
+scrollbar-face-color:#DDDDDD;
+scrollbar-scroll:no
+font-family: Verdana, Arial, Helvetica, sans-serif; color: "#000000"; font-size: 12px; topmargin="0" ;leftmargin="0"; marginheight="0" ;marginwidth="0" ;background-color: #FAFAFA}
+td { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 12px}
+
+
+Select{
+       background-color: #FAFAFA;
+       border-width:0.5pt;
+       font-family: Verdana, Arial, Helvetica, sans-serif;
+       color:#000000;
+       font-size: 11px;
+       text-align:left;
+      }
+
+Input{
+       border-width:0.5pt;
+       border-color:#000000;
+       background-color: #FAFAFA;
+       text-align:left;
+      }
+
+ Textarea{
+		border-width:0.5pt;
+		 border-color:#000000;
+	        background-color: #FAFAFA;
+		 text-align:left;
+		}
+
+ .tlink {
+      	font-family: Arial;
+      	font-size: 11px;
+		font-weight: bold;
+      	}
+      	.tlink:link {text-decoration: none; color: "#373948";}
+	.tlink:visited {text-decoration: none; color: "#373948";}
+       .tlink:hover {text-decoration: none; font-family:arial; color: "#9B3131";}
+  
+.title{
+      	font-family: Arial;
+      	font-size: 12px;
+		color: #E8F1FF;
+		font-weight:bold;
+      	}
+
+ .titlelink {
+      	font-family: Arial;
+      	font-size: 12px;
+      	}
+      	.titlelink:link {text-decoration: underline; color: "#000000"; font-weight: bold;}
+	.titlelink:visited {text-decoration: underline; color: "#000000"; font-weight: bold;}
+       .titlelink:hover {text-decoration: none; font-family:arial; color: "#153296"; font-weight: bold;}
+  .valError {
+	font-family: Arial;
+	font-size: 11px;
+	font-weight: bold;
+	color: #FF0000;
+
+}
+
+.5style{
+      	font-family: Arial;
+      	font-size: 12px;
+		}
+.input-nobox {
+	background-color: #ffffFF;
+	width: auto;
+	margin: auto;
+	clear: none;
+	float: none;
+	height: auto;
+	border: thin;
+	color: #0000FF;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+    SPAN.searchword { 
+	background-color:yellow; 
+	}
+ .bold {
+      	font-size: 15px;
+		font-weight: bold;
+      	}
+		
+.loggedon
+	{
+	color:#ffffff;
+	}
+.footerlink {
+	font-family: Arial,Helvetica,geneva,sans-serif;
+	font-size: 11px;
+	color: #585858;
+	font-weight: none;
+}
+.iso_field {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 9px;
+	font-weight: bold;
+	background-color: #CCCCCC;
+}
+.footerlink:active { color: #585858; text-decoration: none;}
+.footerlink:link { color: #585858; text-decoration: none; }
+.footerlink:visited { color: #585858; text-decoration: none; }
+.footerlink:hover { color: #A0A0A4; text-decoration: none; }
