@@ -89,7 +89,7 @@
                                     <td><%=tempMap.get("admId")%></td>
                                     <td><%=tempMap.get("fullName")%></td>
                                     <td width="3%">
-                                    	<a href="editAdmin.jsp?admId=<%=tempMap.get("admId")%>" title="EDIT"><img src="../../images/action/edit.png" border="0"></a>
+                                    	&nbsp;
                                     </td>
                                     <td>	
                                     	<a href="doDeleteAdmin.jsp?admId=<%=tempMap.get("admId")%>" title="DELETE"  onClick="return confirm('Do you really want to delete this Administrator?')"><img src="../../images/action/delete.png" border="0"></a>

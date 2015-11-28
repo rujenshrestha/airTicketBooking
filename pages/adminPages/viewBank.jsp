@@ -92,7 +92,7 @@
                                     	<a href="editBank.jsp?bnkId=<%=tempMap.get("bnkId")%>&bankDesc=<%=tempMap.get("bankDesc") %>" title="EDIT"><img src="../../images/action/edit.png" border="0"></a>
                                     </td>
                                     <td>	
-                                    	<a href="doDeleteBank.jsp?bnkId=<%=tempMap.get("bnkId")%>&bankDesc=<%=tempMap.get("bankDesc") %>" title="DELETE"  onClick="return confirm('Do you really want to delete this Bank?')"><img src="../../images/action/delete.png" border="0"></a>
+                                    	<a href="doDeleteBank.jsp?bnkId=<%=tempMap.get("bnkId")%>" title="DELETE"  onClick="return confirm('Do you really want to delete this Bank?')"><img src="../../images/action/delete.png" border="0"></a>
                                     </td>
                                     
 			</tr>
