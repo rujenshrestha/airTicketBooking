@@ -121,14 +121,19 @@ if(request.getParameter("msg")!=null){
                     </tr>
                 </table></td>
               </tr>
+              
           </table></td>
         </tr>
       </table></td>
 	  
   </tr>
   <tr>
-    <td valign="top" bgcolor="#FFFFFF">
-	</td>
+     <td valign="top" bgcolor="#FFFFFF">
+    	<jsp:include page="../../include/footer.jsp" />
+	 </td>
+</tr>
+  <tr>
+   
   </tr>
 </table>
 </body>

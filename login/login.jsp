@@ -267,5 +267,10 @@ if(request.getParameter("msg")!=null){
 
 	});    	
     </script>
+    
+    <div valign="top" bgcolor="#FFFFFF">
+	 <jsp:include page="../include/footer.jsp" />
+	</div>
+  </tr>
 </body>
 </html>
