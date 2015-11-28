@@ -82,8 +82,8 @@
 <%
   	 while (userList.hasNext()) {
   	 HashMap tempMap = (HashMap) userList.next();  
-  	 name = tempMap.get("firstName").toString()+
-  			tempMap.get("middleName").toString()+
+  	 name = tempMap.get("firstName").toString()+" "+
+  			tempMap.get("middleName").toString()+" "+
   			tempMap.get("lastName").toString();
   	 
 	rowColor = ((i++ % 2) == 0) ? "#ececec" : "#fffff" ;

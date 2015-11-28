@@ -50,7 +50,7 @@
         
         
         <li class="no-sub">
-            <a class="top-heading" href="#">Log out</a>
+            <a class="top-heading" href="<%=request.getContextPath() + "/login/logout.jsp"%>">Log out</a>
         </li>
         
     </ul>

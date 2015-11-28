@@ -6,9 +6,11 @@
 <head>
 <title>Online Air Ticketing</title>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
 </head>
 
 <%
+String url=request.getContextPath();
 String username = request.getParameter("username").toString();
 String password = request.getParameter("password").toString();
 
@@ -36,7 +38,12 @@ try{
 				statusCd = tempMap.get("statusCd").toString();
 				logId = tempMap.get("id").toString();
 				
+				System.out.println("context link::::::::::::::::::: "+ request.getContextPath());
+				
+				
+				
 				if(roleCd.matches("A")&& statusCd.matches("E")){
+					url = url+"/pages/adminPages/adminDashboard.jsp";
 					%>
 						<jsp:forward page="../pages/adminPages/adminDashboard.jsp" >
 							<jsp:param name="msg" value="" />
@@ -44,10 +51,11 @@ try{
 					<%
 				
 				}else if(roleCd.matches("U")&& statusCd.matches("E")){
+					url = url+"/pages/userPages/userDashboard.jsp";
 					%>
-					<jsp:forward page="../pages/userPages/userDashboard.jsp" >
-						<jsp:param name="msg" value="" />
-					</jsp:forward>
+						<jsp:forward page="../pages/userPages/userDashboard.jsp" >
+							<jsp:param name="msg" value="" />
+						</jsp:forward>
 					<%
 				}else{
 					%>
