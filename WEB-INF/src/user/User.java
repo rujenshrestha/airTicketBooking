@@ -135,7 +135,7 @@ public class User {
 		
 		public void addUser(String firstName,String middleName,String lastName,String address,
 						    String phone,String mobileNo,String emailId,String bankId,
-						    String accountNo){
+						    String accountNo,String username,String password){
 			try{
 			
 				con = dbcon.getDbConnection() ;
@@ -149,12 +149,30 @@ public class User {
 				stmt.setString(3,lastName);
 				stmt.setString(4,address);
 				stmt.setInt(5,Integer.parseInt(phone));
-				stmt.setInt(6,Integer.parseInt(mobileNo));
+				stmt.setLong(6,Long.parseLong(mobileNo));
 				stmt.setString(7,emailId);
 				stmt.setInt(8,Integer.parseInt(bankId));
 				stmt.setString(9,accountNo);
 
 				stmt.executeUpdate();
+				
+				sql="select usr_id from users where first_name=? and last_name=? and mobile_no=?";
+				stmt = con.prepareStatement(sql);
+				stmt.setString(1,firstName);
+				stmt.setString(2,lastName);
+				stmt.setLong(3,Long.parseLong(mobileNo));
+				rs = stmt.executeQuery();
+				
+				if(rs.next()){
+					String usrId = rs.getString("usr_id");
+					sql="insert into authentication(username,pwd,role_cd,status_cd,id) "
+						+ "values(?,?,'U','E',?)";
+					stmt = con.prepareStatement(sql);
+					stmt.setString(1,username);
+					stmt.setString(2,password);
+					stmt.setInt(3,Integer.parseInt(usrId));
+					stmt.executeUpdate();
+				}
 			
 			} catch (SQLException errSql){
 				System.out.println("SQL Exception in addUser:"+errSql);			

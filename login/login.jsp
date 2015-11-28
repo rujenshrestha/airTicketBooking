@@ -138,7 +138,7 @@ java.util.Iterator bankList = bank.getBankList().iterator();
 										</div>
 									</div>
 								</form>
-								<form id="register-form" action="" method="post" role="form" style="display: none;">
+								<form id="register-form" action="../pages/userPages/signUp.jsp" method="post" role="form" style="display: none;">
 								<div class="form-group">
 										<input type="text" name="fname" id="fname" tabindex="1" class="form-control" placeholder="First Name" value="">
 								</div>
@@ -170,7 +170,7 @@ java.util.Iterator bankList = bank.getBankList().iterator();
 										<input type="text" name="phone" id="phone" tabindex="1" class="form-control" placeholder="Contact No." value="">
 									</div>
 									<div class="form-group">
-				                            <select class="form-control" id="bank" name="bank">
+				                            <select class="form-control" id="bank" name="bnkId">
 				                            <option value="A">--Select Bank--</option>
 				                              <%while(bankList.hasNext()){ 
 				                              	HashMap tempMap = (HashMap) bankList.next();
