@@ -48,15 +48,7 @@
 	        	<from>efgpf</from>
 	        	<to>pages/fundTransfer</to>
 	        </rule>
-	        <rule>
-	        	<from>cndl</from>
-	        	<to>login</to>
-	        </rule>
-
-	        <rule>
-	        	<from>home</from>
-	        	<to>/</to>
-	        </rule>
+	        
 	        
 	         <rule>
 	        	<from>spdvbh/([\d]+)</from>

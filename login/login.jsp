@@ -36,9 +36,7 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand padding-top padding-left" href="#">
-                            <img src="../images/tara.jpg" width="100%">
-                        </a>
+
                     </div>
                     <div class="collapse navbar-collapse" id="myNavbar">
                         <ul class="nav navbar-nav pull-right">
