@@ -22,6 +22,13 @@
     <![endif]-->
 </head>
 <body>
+
+<%
+String msg="";
+if(request.getParameter("msg")!=null){
+	msg=request.getParameter("msg").toString();
+}
+%>
     <div class="container-fluid">
         <div class="row">
             <nav
@@ -88,6 +95,13 @@
 						<hr>
 					</div>
 					<div class="panel-body">
+					<div>
+						<font color="#FF0000">
+	                          	<%if(!msg.matches("")){ %>
+	                          	<%=msg %>
+	                          	<%} %>
+                        </font> 
+                     </div>
 						<div class="row">
 							<div class="col-lg-12">
 								<form id="login-form" action="doLogin.jsp" method="post" role="form" style="display: block;">
