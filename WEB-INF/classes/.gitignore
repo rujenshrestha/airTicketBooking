@@ -1,1 +1,11 @@
+/admin/
+/airline/
+/bank/
+/dbconnection/
+/dummybank/
+/location/
 /login/
+/reservation/
+/schedule/
+/user/
+/utilities/
