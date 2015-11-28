@@ -140,25 +140,38 @@ java.util.Iterator bankList = bank.getBankList().iterator();
 								</form>
 								<form id="register-form" action="" method="post" role="form" style="display: none;">
 								<div class="form-group">
-										<input type="text" name="name" id="name" tabindex="1" class="form-control" placeholder="Full Name" value="">
+										<input type="text" name="name" id="name" tabindex="1" class="form-control" placeholder="First Name" value="">
+								</div>
+								<div class="form-group">		
+										<input type="text" name="name" id="name" tabindex="1" class="form-control" placeholder="Middle Name (optional)" value="">
+								</div>
+								<div class="form-group">		
+										<input type="text" name="name" id="name" tabindex="1" class="form-control" placeholder="Last Name" value="">
 									</div>
 									<div class="form-group">
 										<input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Username" value="">
 									</div>									
 									<div class="form-group">
-										<input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Password">
+										<input type="password" name="pwd" id="password" tabindex="2" class="form-control" placeholder="Password">
 									</div>
 									<div class="form-group">
-										<input type="password" name="confirm-password" id="confirm-password" tabindex="2" class="form-control" placeholder="Confirm Password">
-									</div>
-									<div class="form-group">
-										<input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Email Address" value="">
+										<input type="password" name="confirmPwd" id="confirm-password" tabindex="2" class="form-control" placeholder="Confirm Password">
 									</div>
 									<div class="form-group">
 										<input type="text" name="address" id="address" tabindex="1" class="form-control" placeholder="Address" value="">
 									</div>
 									<div class="form-group">
+										<input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Email Address" value="">
+									</div>
+									<div class="form-group">
+										<input type="text" name="mobileNo" id="address" tabindex="1" class="form-control" placeholder="Mobile No." value="">
+									</div>
+									<div class="form-group">
+										<input type="text" name="phone" id="phone" tabindex="1" class="form-control" placeholder="Contact No." value="">
+									</div>
+									<div class="form-group">
 				                            <select class="form-control" id="bank" name="bank">
+				                            <option value="A">--Select Bank--</option>
 				                              <%while(bankList.hasNext()){ 
 				                              	HashMap tempMap = (HashMap) bankList.next();
 				                              %> 
@@ -167,14 +180,9 @@ java.util.Iterator bankList = bank.getBankList().iterator();
 				                            </select>
                    					</div>
                    					<div class="form-group">
-										<input type="text" name="account" id="account" tabindex="1" class="form-control" placeholder="Account No." value="">
+										<input type="text" name="accountNo" id="account" tabindex="1" class="form-control" placeholder="Account No." value="">
 									</div>
-									<div class="form-group">
-										<input type="text" name="mobile" id="address" tabindex="1" class="form-control" placeholder="Mobile No." value="">
-									</div>
-									<div class="form-group">
-										<input type="text" name="contact" id="address" tabindex="1" class="form-control" placeholder="Contact No." value="">
-									</div>
+									
 									<div class="form-group">
 										<div class="row">
 											<div class="col-sm-6 col-sm-offset-3">
