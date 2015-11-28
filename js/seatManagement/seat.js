@@ -1,7 +1,7 @@
 				$(function() {
 					var settings = {
-						rows : 10,
-						cols : 4,
+						rows : 3,
+						cols : 10,
 						rowCssPrefix : 'row-',
 						colCssPrefix : 'col-',
 						seatWidth : 35,
@@ -40,7 +40,10 @@
 					//init();
 
 					//Case II: If already booked
+					
 					var bookedSeats = [ 5, 10, 11 ];
+					
+					
 					init(bookedSeats);
 
 					$('.' + settings.seatCss).click(function() {
