@@ -15,31 +15,29 @@
 	  
 <%
 String msg="";
+String admId="";
 if(request.getParameter("msg")!=null){
 	msg=request.getParameter("msg").toString();
 	
-String admId = request.getParameter("admId").toString();
-
 String fullName="";
 String address="";
 String phone="";
 String mobileNo="";
 String email="";
-
+String username="";
+String pwd="";
+	
 Admin admin = new Admin();
-java.util.Iterator adminDetail = admin.getAdminDetail(admId).iterator();
 
-if(adminDetail.hasNext()){
- 	 HashMap tempMap = (HashMap) adminList.next();  
- 	 
- 	 fullName = tempMap.get("fullName").toString();
-	 address = tempMap.get("address").toString();
- 	 phone = tempMap.get("phone").toString();
- 	 mobileNo = tempMap.get("mobileNo").toString();
- 	 email = tempMap.get("emailId").toString();
-
+if(session.getAttribute("id")!=null){
+		System.out.println("Session Id in editAdmin.jsp :: "+session.getAttribute("id"));
+		admId = session.getAttribute("id").toString();
+		System.out.println("admId in editAdmin.jsp: "+admId);
 }
-%>	  
+		
+		java.util.Iterator adminDetail = admin.getAdminDetail(admId).iterator();
+%>
+			  
 	  <table width="100%" height="100%"  border="0" cellpadding="0" cellspacing="0">
         <tr>
           <td height="100%" valign="top"><table width="100%"  border="0" cellspacing="0" cellpadding="8">
@@ -77,6 +75,20 @@ if(adminDetail.hasNext()){
                             <td width="14%">
 							 <form name="f1"action="doEditAdmin.jsp" method="post">
 							    <table width="100%"  border="0" cellpadding="2" cellspacing="0" bgcolor="#ECE9D8">
+        							<%
+        								while(adminDetail.hasNext()){
+										 	 HashMap tempMap = (HashMap) adminDetail.next();  
+										 	 
+										 	 fullName = tempMap.get("fullName").toString();
+											 address = tempMap.get("address").toString();
+										 	 phone = tempMap.get("phone").toString();
+										 	 mobileNo = tempMap.get("mobileNo").toString();
+										 	 email = tempMap.get("emailId").toString();
+										 	 username = tempMap.get("username").toString();
+										 	 pwd = tempMap.get("pwd").toString();
+								
+										}%>                         
+		                                 
                                   <tr bgcolor="#FFFFFF">
                                     <td width="2%">&nbsp;</td>
                                     <td width="22%">&nbsp;</td>
@@ -88,43 +100,43 @@ if(adminDetail.hasNext()){
                                     <td width="2%">&nbsp;</td>
                                     <td width="22%">&nbsp;</td>
                                     <td width="15%">Username </td>
-                                    <td width="58%"><input type="text" name="username" value="<%=%>"maxlength="50" required></td>
+                                    <td width="58%"><input type="text" name="username" value="<%=username%>" maxlength="50" required></td>
                                     <td width="16%">&nbsp;</td>
                                   </tr>
                                   <tr bgcolor="#FFFFFF">
                                     <td width="2%">&nbsp;</td>
                                     <td width="22%">&nbsp;</td>
                                     <td width="15%">Password </td>
-                                    <td width="58%"><input type="password" name="password" maxlength="50" required></td>
+                                    <td width="58%"><input type="password" name="password" value="<%=pwd%>" maxlength="50" required></td>
                                     <td width="16%">&nbsp;</td>
                                   </tr>
                                   <tr bgcolor="#FFFFFF">
                                     <td>&nbsp;</td>
                                     <td>&nbsp;</td>
                                     <td>Address </td>
-                                    <td><input type="text" name="address" maxlength="100" required></td>
+                                    <td><input type="text" name="address" value="<%=address%>" maxlength="100" required></td>
                                     <td width="16%">&nbsp;</td>
                                   </tr>
                                   <tr bgcolor="#FFFFFF">
                                     <td>&nbsp;</td>
                                     <td>&nbsp;</td>
                                     <td>Phone </td>
-                                    <td><input type="text" name="phone" maxlength="50" required></td>
+                                    <td><input type="text" name="phone" value="<%=phone%>" maxlength="50" required></td>
                                     <td width="16%">&nbsp;</td>
                                   </tr>
                                   <tr bgcolor="#FFFFFF">
                                     <td>&nbsp;</td>
                                     <td>&nbsp;</td>
                                     <td>Mobile no. </td>
-                                    <td><input type="text" name="mobileNo" maxlength="50" required></td>
-                                    <td width="16%"\>&nbsp;</td>
+                                    <td><input type="text" name="mobileNo" value="<%=mobileNo%>" maxlength="50" required></td>
+                                    <td width="16%">&nbsp;</td>
                                   </tr>   
                                   <tr bgcolor="#FFFFFF">
                                     <td>&nbsp;</td>
                                     <td>&nbsp;</td>
                                     <td>Email </td>
-                                    <td><input type="text" name="email" maxlength="50" required></td>
-                                    <td width="16%"\>&nbsp;</td>
+                                    <td><input type="text" name="email" value="<%=email %>" maxlength="50" required></td>
+                                    <td width="16%">&nbsp;</td>
                                   </tr>
                                   <tr bgcolor="#FFFFFF">
                                     <td>&nbsp;</td>

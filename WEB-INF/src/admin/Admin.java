@@ -61,15 +61,24 @@ public class Admin{
 			rs = stmt.executeQuery();
 			
 			result  = new ArrayList();	
-			while ( rs.next() ) {
+			if ( rs.next() ) {
 				resultMap = new HashMap();
 				
-				resultMap.put("fullName",rs.getString("full_name"));
+				resultMap.put("fullName",rs.getString("fullname"));
 				resultMap.put("address",rs.getString("address"));
 				resultMap.put("phone",rs.getString("phone"));
 				resultMap.put("mobileNo",rs.getString("mobile_no"));
 				resultMap.put("emailId",rs.getString("email_id"));
 				
+				sql="select * from authentication where id =? and role_cd= 'A'";
+				stmt = con.prepareStatement(sql);
+				stmt.setString(1,admId);
+				rs = stmt.executeQuery();
+				
+				if(rs.next()){
+					resultMap.put("username", rs.getString("username"));
+					resultMap.put("pwd", rs.getString("pwd"));
+				}
 				result.add(resultMap);
 			}
 		} catch (SQLException errSql){

@@ -38,7 +38,14 @@ try{
 				statusCd = tempMap.get("statusCd").toString();
 				logId = tempMap.get("id").toString();
 				
-				System.out.println("context link::::::::::::::::::: "+ request.getContextPath());
+				session.setAttribute("id",logId);
+				session.setAttribute("roleCd",roleCd);
+				session.setAttribute("athId",athId);
+				
+				System.out.println("Session Id:: "+session.getAttribute("id"));
+				System.out.println("Session Role:: "+session.getAttribute("roleCd"));
+				System.out.println("Session athId:: "+session.getAttribute("athId"));
+
 				
 				
 				

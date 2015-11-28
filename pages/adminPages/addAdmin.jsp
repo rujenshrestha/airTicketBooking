@@ -18,6 +18,7 @@ String msg="";
 if(request.getParameter("msg")!=null){
 	msg=request.getParameter("msg").toString();
 }
+
 %>	  
 	  <table width="100%" height="100%"  border="0" cellpadding="0" cellspacing="0">
         <tr>

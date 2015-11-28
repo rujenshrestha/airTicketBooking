@@ -46,7 +46,7 @@
                 </div>
             </div>
         </li>
-        <li class="no-sub"><a class="top-heading" href="http://www.google.com">Change Password</a></li>
+        <li class="no-sub"><a class="top-heading" href="<%=request.getContextPath() + "/pages/adminPages/editAdmin.jsp"%>">Change Detail</a></li>
         
         
         <li class="no-sub">
