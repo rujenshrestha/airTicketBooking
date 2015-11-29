@@ -115,7 +115,7 @@
                                     <td><%=tempMap.get("class")%></td>
                                     <td><%=tempMap.get("seatQnty")%></td>
                                     <td>
-                                        <a href="editFlightSchedule?schId=<%=tempMap.get("schId")%>" title="EDIT"><img src="../../images/action/edit.png" border="0"></a>
+                                        <a href="editFlightSchedule.jsp?schId=<%=tempMap.get("schId")%>" title="EDIT"><img src="../../images/action/edit.png" border="0"></a>
                                     </td>
                                     <td>	
                                     	<a href="doDeleteFlightSchedule.jsp?schId=<%=tempMap.get("schId")%>" title="DELETE"  onClick="return confirm('Do you really want to disable this User?')"><img src="../../images/action/delete.png" border="0"></a>

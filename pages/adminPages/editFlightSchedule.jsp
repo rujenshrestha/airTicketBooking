@@ -27,6 +27,15 @@ Airline air = new Airline();
 Location loc = new Location();
 Schedule sch = new Schedule();
 
+String airlineDesc="";
+String fromLocDesc="";
+String toLocDesc="";
+String price="";
+String date="";
+String time="";
+String fClass="";
+String seatQnty="";
+
 java.util.Iterator schList = sch.getScheduleDetail(schId).iterator();
 java.util.Iterator airlineList = air.getAirlineList().iterator();
 java.util.Iterator fromLocList = loc.getlocationList().iterator();
@@ -70,12 +79,24 @@ java.util.Iterator toLocList = loc.getlocationList().iterator();
                             <td width="14%">
 							 <form name="f1"action="doEditFlightSchedule.jsp" method="post">
 							    <table width="100%"  border="0" cellpadding="2" cellspacing="0" bgcolor="#ECE9D8">
+							      <%
+							      	while(schList.hasNext()){
+							      		HashMap tempMap1 = (HashMap) schList.next();
+							      		airlineDesc = air.getAirlineDesc(tempMap1.get("alnId").toString());
+							      		fromLocDesc =  loc.getlocationDesc(tempMap1.get("fromLocId").toString());
+							      		toLocDesc = loc.getlocationDesc(tempMap1.get("toLocId").toString());
+							      		price = tempMap1.get("price").toString();
+							      		date = tempMap1.get("flightDate").toString();
+							      		time = tempMap1.get("flightTime").toString();
+							      		seatQnty = tempMap1.get("seatQnty").toString();
+							      %>
                                   <tr bgcolor="#FFFFFF">
                                     <td width="2%">&nbsp;</td>
                                     <td width="22%">&nbsp;</td>
                                     <td width="15%">Airline</td>
                                     <td width="58%">
                                     	<select name="alnId">
+                                    	<option value="<%=tempMap1.get("alnId")%>"><%=airlineDesc %></option>
                                     	 <%while(airlineList.hasNext()){ 
                                     	 	HashMap tempMap = (HashMap) airlineList.next();
                                     		 %>
@@ -91,6 +112,7 @@ java.util.Iterator toLocList = loc.getlocationList().iterator();
                                     <td width="15%">From </td>
                                     <td width="58%">
                                     <select name="fromLocId">
+                                    <option value="<%=tempMap1.get("fromLocId")%>"><%=fromLocDesc%></option>
                                     	  <%while(fromLocList.hasNext()){ 
                                     	 	HashMap tempMap = (HashMap) fromLocList.next();
                                     		 %>
@@ -106,6 +128,7 @@ java.util.Iterator toLocList = loc.getlocationList().iterator();
                                     <td width="15%">To </td>
                                     <td width="58%">
                                     <select name="toLocId">
+                                    <option value="<%=tempMap1.get("toLocId")%>"><%=toLocDesc%></option>
                                     	 <%while(toLocList.hasNext()){ 
                                     	 	HashMap tempMap = (HashMap) toLocList.next();
                                     		 %>
@@ -119,21 +142,21 @@ java.util.Iterator toLocList = loc.getlocationList().iterator();
                                     <td>&nbsp;</td>
                                     <td>&nbsp;</td>
                                     <td>Price </td>
-                                    <td><input type="text" name="price" maxlength="100" required></td>
+                                    <td><input name="price" value="<%=price%>" required></td>
                                     <td width="16%">&nbsp;</td>
                                   </tr>
                                   <tr bgcolor="#FFFFFF">
                                     <td>&nbsp;</td>
                                     <td>&nbsp;</td>
                                     <td>Time </td>
-                                    <td><input type="text" name="time" maxlength="50" required></td>
+                                    <td><input name="time" value="<%=time%>" required></td>
                                     <td width="16%">&nbsp;</td>
                                   </tr>
                                   <tr bgcolor="#FFFFFF">
                                     <td>&nbsp;</td>
                                     <td>&nbsp;</td>
                                     <td>Date </td>
-                                    <td><input type="text" name="date" maxlength="50" required></td>
+                                    <td><input name="date" value="<%=date%>" required></td>
                                     <td width="16%">&nbsp;</td>
                                   </tr>
                                   <tr bgcolor="#FFFFFF">
@@ -142,6 +165,7 @@ java.util.Iterator toLocList = loc.getlocationList().iterator();
                                     <td width="15%">Class </td>
                                     <td width="58%">
                                     <select name="class">
+                                    <option value="<%=tempMap1.get("class")%>"><%=tempMap1.get("class")%></option>
                                     	 <option value="A">A</option>
                                     	 <option value="B">B</option>
                                     	 <option value="C">C</option>	
@@ -153,7 +177,7 @@ java.util.Iterator toLocList = loc.getlocationList().iterator();
                                     <td>&nbsp;</td>
                                     <td>&nbsp;</td>
                                     <td>Seat Quantity </td>
-                                    <td><input type="text" name="seatQnty" maxlength="50" required></td>
+                                    <td><input name="seatQnty" value="<%=seatQnty%>" required></td>
                                     <td width="16%"\>&nbsp;</td>
                                   </tr>
                                   <tr bgcolor="#FFFFFF">
@@ -165,6 +189,7 @@ java.util.Iterator toLocList = loc.getlocationList().iterator();
                                 <input type="reset" name="reset" value="Reset"></td>
                                 <td>&nbsp; </td>
                                   </tr>
+                                  <%} %>
                                 </table>
 							  </form>
 						    </td>
