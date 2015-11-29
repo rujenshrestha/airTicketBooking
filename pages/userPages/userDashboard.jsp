@@ -1,3 +1,5 @@
+<%@page contentType="text/html; charset=iso-8859-1" language="java" errorPage="" %>
+
 <!doctype html>
 <%@page import="location.Location" %>
 <%@page import="java.util.* " %>
@@ -5,19 +7,19 @@
 <head>
     <meta charset="utf-8">
     <title>jQuery UI Composite Demo - Flight Booking</title>
-    <link href="../../css/bookingForm/reset.css" rel="stylesheet">
+    <link href="/airTicketBooking/css/bookingForm/reset.css" rel="stylesheet">
     <link
-            href="../../css/bookingForm/ui-lightness/jquery-ui-1.9.0.custom.css"
+            href="/airTicketBooking/css/bookingForm/ui-lightness/jquery-ui-1.9.0.custom.css"
             rel="stylesheet">
-    <link href="../../css/bookingForm/style.css" rel="stylesheet">
+    <link href="/airTicketBooking/css/bookingForm/style.css" rel="stylesheet">
 
-    <script src="../../js/bookingForm/jquery-1.8.2.min.js"></script>
-    <script src="../../js/bookingForm/jquery-ui-1.9.0.custom.min.js"></script>
-    <script src="../../js/bookingForm/cssMakeup.js"></script>
-    <script src="../../js/bookingForm/citiesnDate.js"></script>
+    <script src="/airTicketBooking/js/bookingForm/jquery-1.8.2.min.js"></script>
+    <script src="/airTicketBooking/js/bookingForm/jquery-ui-1.9.0.custom.min.js"></script>
+    <script src="/airTicketBooking/js/bookingForm/cssMakeup.js"></script>
+    <script src="/airTicketBooking/js/bookingForm/citiesnDate.js"></script>
 
-    <script src="../../js/jquery-1.4.1.min.js" type="text/javascript"></script>
-    <script src="../../js/seatManagement/seat.js" type="text/javascript"></script>
+    <script src="/airTicketBooking/js/jquery-1.4.1.min.js" type="text/javascript"></script>
+    <script src="/airTicketBooking/js/seatManagement/seat.js" type="text/javascript"></script>
 
 </head>
 <body>
