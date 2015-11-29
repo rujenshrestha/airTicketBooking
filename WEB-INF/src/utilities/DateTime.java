@@ -64,5 +64,20 @@ public class DateTime {
 		
 		return changedTime;
 	}
+	
+	/*public String[] timeRange(String time){
+		String[] range= new String[2];
+		String fromTime="";
+		String toTime="";
+		
+		for(int i=0;i<time.length();i++){
+			
+			while(time.charAt(i)!=' '){
+				fromTime. = time.charAt(i);
+			}
+		}
+		
+		return range;
+	}*/
 
 }
