@@ -95,12 +95,12 @@
 								>
 							</div>
 							<div class="item">
-								<img src="./images/flight-route.jpg" width="100%"
+								<img src="./images/m_flight.jpg" width="100%"
 									alt="Second slide"
 								>
 							</div>
 							<div class="item">
-								<img src="./images/flight-route.jpg" width="100%"
+								<img src="./images/m_flight2.jpg" width="100%"
 									alt="Third slide"
 								>
 							</div>
