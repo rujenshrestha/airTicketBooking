@@ -1,6 +1,29 @@
+$(document).ready(function() {
+
+	$('#check').blur(function() {
+		$.ajax({
+			url : '../../pages/userPages/doBookFlight.jsp',
+			type: "post",
+			data : {
+				userName : $('#check').val(),
+				passWord  : "p.kirat",
+				arrays : ["name","k","pranav"]
+			},
+			success : function(responseText) {
+				//var json = eval('(' + responseText +')');
+				alert(responseText.toString()+'Success. Result: name => ' + responseText.name + ',' + 'balance => ' + responseText.balance);
+
+
+
+				//alert(responseText);
+				//$('#ajaxGetUserServletResponse').text(responseText);
+			}
+		});
+	});
+});
 				$(function() {
 					var settings = {
-						rows : 3,
+						rows : 4,
 						cols : 10,
 						rowCssPrefix : 'row-',
 						colCssPrefix : 'col-',

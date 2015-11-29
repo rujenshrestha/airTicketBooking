@@ -1,4 +1,4 @@
-<%@page contentType="text/html; charset=iso-8859-1" language="java" import="java.util.*" isErrorPage ="true" %>
+<%@page contentType="text/html; charset=iso-8859-1" language="java" isErrorPage ="true" %>
 <jsp:include page="../include/HeaderError.jsp"/>
 <div class="panel panel-ibx">
 <div class="panel-body">

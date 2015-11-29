@@ -1,4 +1,4 @@
-<%@page contentType="text/html; charset=iso-8859-1" language="java" import="java.sql.*,java.util.*" errorPage="../error/error.jsp" %>
+<%@page contentType="text/html; charset=iso-8859-1" language="java" errorPage="../error/error.jsp" %>
 
 <%
 String roleCd="";
