@@ -8,6 +8,7 @@ import java.util.Date;
 import java.io.*;
 
 import dbconnection.DbConnection;
+import utilities.DateTime;
 
 
 public class Schedule {
@@ -21,6 +22,7 @@ public class Schedule {
 				private String sql="";
 			    
 				DbConnection dbcon = new DbConnection();
+				DateTime dt = new DateTime();
 				
 				
 				public List getScheduleList(){
@@ -69,11 +71,16 @@ public class Schedule {
 				public void updateSchedule(String alnId,String fromLocId,String toLocId,
 						String price,String time,String date,String flightClass,
 						String seatQnty){
+					
+					date  = dt.changeDateFormat(date,"MM/dd/yyyy", "yyyy-MM-dd");
+					time = dt.changeTimeFormat(time);
+					
+					System.out.println("Changed date and time :: "+ date +"    "+time);
 					try{
 					
 						con = dbcon.getDbConnection() ;
 						sql ="update flight_schedule set aln_id=?,from_loc_id=?,to_loc_id=?,price=?,"
-							+"fligt_time=?,flight_date=?,class=?,seat_qnty=?)";
+							+"flight_time=?,flight_date=?,class=?,seat_qnty=?)";
 						stmt = con.prepareStatement(sql); 
 						
 						stmt.setInt(1,Integer.parseInt(alnId));
@@ -105,11 +112,16 @@ public class Schedule {
 				public void addSchedule(String alnId,String fromLocId,String toLocId,
 										String price,String time,String date,String flightClass,
 										String seatQnty){
+					
+					date  = dt.changeDateFormat(date,"MM/dd/yyyy", "yyyy-MM-dd");
+					time = dt.changeTimeFormat(time);
+					
+					System.out.println("Changed date and time :: "+ date +"    "+time);
 					try{
 					
 						con = dbcon.getDbConnection() ;
 						sql ="insert into flight_schedule(aln_id,from_loc_id,to_loc_id,price,"
-							+"fligt_time,flight_date,class,seat_qnty) "
+							+"flight_time,flight_date,class,seat_qnty) "
 							+"values(?,?,?,?,?,?,?,?)";
 						stmt = con.prepareStatement(sql); 
 						
