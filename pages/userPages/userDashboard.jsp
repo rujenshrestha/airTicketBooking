@@ -3,7 +3,7 @@
 <!doctype html>
 <%@page import="location.Location" %>
 <%@page import="java.util.* " %>
-<html lang="us"> 
+<html lang="us">   
 <head>
     <meta charset="utf-8">
     <title>jQuery UI Composite Demo - Flight Booking</title>

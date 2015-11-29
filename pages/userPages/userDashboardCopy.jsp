@@ -3,7 +3,7 @@
 <%@page import="schedule.Schedule" %>
 <%@page import="java.util.* " %>
 <html lang="us"> 
-<head>
+<head>  
     <meta charset="utf-8">
     <title>jQuery UI Composite Demo - Flight Booking</title>
     <link href="/airTicketBooking/css/bookingForm/reset.css" rel="stylesheet">
