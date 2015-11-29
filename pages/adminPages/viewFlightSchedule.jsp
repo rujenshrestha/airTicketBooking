@@ -60,7 +60,7 @@
                           <tr> 
                             
                       <td width="183" height="19" bgcolor="#373948" class="titlelink"> 
-                        &nbsp;<span class="title">&nbsp;Bank List</span></td>
+                        &nbsp;<span class="title">&nbsp;Flight Schedule List</span></td>
                             <td width="368" bgcolor="" class="titlelink"> <table width="100%" cellpadding="0" cellspacing="0">
 								</table> 
                               </font> </td>
