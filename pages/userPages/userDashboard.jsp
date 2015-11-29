@@ -12,7 +12,7 @@
             href="/airTicketBooking/css/bookingForm/ui-lightness/jquery-ui-1.9.0.custom.css"
             rel="stylesheet">
     <link href="/airTicketBooking/css/bookingForm/style.css" rel="stylesheet">
-
+	<link href="/airTicketBooking/css/ddmenu.css" rel="stylesheet" type="text/css" />
     <script src="/airTicketBooking/js/bookingForm/jquery-1.8.2.min.js"></script>
     <script src="/airTicketBooking/js/bookingForm/jquery-ui-1.9.0.custom.min.js"></script>
     <script src="/airTicketBooking/js/bookingForm/cssMakeup.js"></script>
@@ -20,6 +20,8 @@
 
     <script src="/airTicketBooking/js/jquery-1.4.1.min.js" type="text/javascript"></script>
     <script src="/airTicketBooking/js/seatManagement/seat.js" type="text/javascript"></script>
+    
+    <script src="/airTicketBooking/js/ddmenu.js" type="text/javascript"></script>
 
 </head>
 <body>
@@ -31,14 +33,17 @@ java.util.Iterator toLocList = loc.getlocationList().iterator();
 
 
 %>
+
 <div id="main-container" class="main-container">
+ <jsp:include page="../../include/header.jsp" />
+ <jsp:include page="../../include/userMenu.jsp" />
     <div class="left-side" class="left">
         <div id="entryInnerWrap" class="entry-inner-wrap">
             <h1>Search/Book Flights</h1>
 
             <div class="clr"></div>
             <div class="entry-inner-left">
-                <form name="bookForm" action="userDashboardCopy.jsp" method="post">
+                <form name="bookForm" action="/airTicketBooking/pages/userPages/userDashboardCopy.jsp" method="post">
                     <div id="flightDemo">
                         <div id="airportWrap">
                             <div id="flightFromWrap">
@@ -197,7 +202,7 @@ java.util.Iterator toLocList = loc.getlocationList().iterator();
     </div>
 
 
-
+<jsp:include page="../../include/footer.jsp" />
 </div>
 </body>
 </html>
