@@ -68,7 +68,7 @@ public class Schedule {
 
 
 				
-				public void updateSchedule(String alnId,String fromLocId,String toLocId,
+				public void updateSchedule(String schId,String alnId,String fromLocId,String toLocId,
 						String price,String time,String date,String flightClass,
 						String seatQnty){
 					
@@ -80,7 +80,7 @@ public class Schedule {
 					
 						con = dbcon.getDbConnection() ;
 						sql ="update flight_schedule set aln_id=?,from_loc_id=?,to_loc_id=?,price=?,"
-							+"flight_time=?,flight_date=?,class=?,seat_qnty=?)";
+							+"flight_time=?,flight_date=?,class=?,seat_qnty=? where sch_id =?";
 						stmt = con.prepareStatement(sql); 
 						
 						stmt.setInt(1,Integer.parseInt(alnId));
@@ -91,6 +91,7 @@ public class Schedule {
 						stmt.setString(6,date);
 						stmt.setString(7,flightClass);
 						stmt.setInt(8,Integer.parseInt(seatQnty));;
+						stmt.setInt(9,Integer.parseInt(schId));
 						stmt.executeUpdate();
 					
 					} catch (SQLException errSql){

@@ -77,7 +77,7 @@ java.util.Iterator toLocList = loc.getlocationList().iterator();
 					  <table width="100%" border="0" align="center" cellpadding="2" cellspacing="1" bgcolor="#373948">
                           <tr align="center" bgcolor="#FAFAFA">
                             <td width="14%">
-							 <form name="f1"action="doEditFlightSchedule.jsp" method="post">
+							 <form name="f1"action="doEditFlightSchedule.jsp?schId=<%=schId%>" method="post">
 							    <table width="100%"  border="0" cellpadding="2" cellspacing="0" bgcolor="#ECE9D8">
 							      <%
 							      	while(schList.hasNext()){
