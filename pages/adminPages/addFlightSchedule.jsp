@@ -6,8 +6,21 @@
     <title>Online Air Ticketing</title>
     <link href="../../css/style.css" rel="stylesheet" type="text/css">
     <link href="../../css/ddmenu.css" rel="stylesheet" type="text/css"/>
+    <link href="../../css/bookingForm/reset.css" rel="stylesheet">
+    <link
+            href="../../css/bookingForm/ui-lightness/jquery-ui-1.9.0.custom.css"
+            rel="stylesheet">
+    <link href="../../css/bookingForm/style.css" rel="stylesheet">
+
+    <script src="../../js/bookingForm/jquery-1.8.2.min.js"></script>
+    <script src="../../js/bookingForm/jquery-ui-1.9.0.custom.min.js"></script>
+    <script src="../../js/bookingForm/cssMakeup.js"></script>
+    <script src="../../js/bookingForm/citiesnDate.js"></script>
+
+    <script src="../../js/jquery-1.4.1.min.js" type="text/javascript"></script>
     <script src="../../js/ddmenu.js" type="text/javascript"></script>
     <script src="../../js/bookingForm/citiesnDate.js"></script>
+
 </head>
 
 <body topmargin="0" leftmargin="0" marginheight="0" marginwidth="0">
@@ -122,14 +135,25 @@ java.util.Iterator toLocList = toLoc.getlocationList().iterator();
                                     <td>&nbsp;</td>
                                     <td>&nbsp;</td>
                                     <td>Time </td>
-                                    <td><input type="text" name="time" maxlength="50" required></td>
+                                    <td>
+                                        <input type="text" id="timeAF" name="timeAF" placeholder="hh:mm" maxlength="5" required />
+                                        <select>
+                                            <option value="AM">AM</option>
+                                            <option value="PM">PM</option>
+                                        </select>
+
+
+
+                                    </td>
                                     <td width="16%">&nbsp;</td>
                                   </tr>
                                   <tr bgcolor="#FFFFFF">
                                     <td>&nbsp;</td>
                                     <td>&nbsp;</td>
                                     <td>Date </td>
-                                    <td><input type="text" name="date" maxlength="50" required></td>
+                                    <td><input
+                                            id="dateAF" name="dateAF"
+                                            class="datepicker watermark watermarked ui-corner-all" value="" /></td>
                                     <td width="16%">&nbsp;</td>
                                   </tr>
                                   <tr bgcolor="#FFFFFF">
