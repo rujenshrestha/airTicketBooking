@@ -25,17 +25,33 @@ public class User {
 				sql ="select * from users";
 				stmt = con.prepareStatement(sql);  
 				rs = stmt.executeQuery();
+				String sql1="";
+				ResultSet rs1 =null;
 				
 				result  = new ArrayList();	
 				while ( rs.next() ) {
-					resultMap = new HashMap();
 					
-					resultMap.put("usrId",rs.getString("usr_id"));
-					resultMap.put("firstName",rs.getString("first_name"));
-					resultMap.put("middleName",rs.getString("middle_name"));
-					resultMap.put("lastName",rs.getString("last_name"));
+					sql1 = "select status_cd from authentication where role_cd = 'U' and "
+						  +"id = "+ rs.getString("usr_id");
+					stmt = con.prepareStatement(sql1);
+					rs1 = stmt.executeQuery();
+					
+					if(rs1.next()){
+						System.out.println("User Status:: "+ rs1.getString("status_cd"));
+						if(rs1.getString("status_cd").matches("E")){
+							System.out.println("User Added:: "+ rs.getString("usr_id"));
+							
+							resultMap = new HashMap();
+							resultMap.put("usrId",rs.getString("usr_id"));
+							resultMap.put("firstName",rs.getString("first_name"));
+							resultMap.put("middleName",rs.getString("middle_name"));
+							resultMap.put("lastName",rs.getString("last_name"));
+							
+							result.add(resultMap);
+						}
+					}
 
-					result.add(resultMap);
+					
 				}
 			} catch (SQLException errSql){
 				System.out.println("SQL Exception in getUserList:"+errSql);			
@@ -206,7 +222,7 @@ public class User {
 			try{
 				
 				con = dbcon.getDbConnection() ;
-				sql ="delete from users where usr_id = ?";
+				sql ="update authentication set status_cd = 'B' where id = ? and role_cd = 'U'";
 				stmt = con.prepareStatement(sql); 
 				
 				stmt.setInt(1, Integer.parseInt(usrId));
