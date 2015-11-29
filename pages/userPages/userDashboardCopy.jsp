@@ -29,16 +29,24 @@
                 <div id="flightDemo">
                     <div id="airportWrap">
                         <div id="flightFromWrap">
-                            <label for="flightFrom">Leaving From:</label> <input
+                            <label for="flightFrom">Leaving From:</label> <select
                                 id="flightFrom" name="flightFrom"
                                 class="watermark watermarked autocomplete ui-corner-all"
                                 autocomplete="off" title="City or Airport Code" value="">
+
+                            <option value="ktm">ktm</option>
+
+                        </select>
                         </div>
                         <div id="flightToWrap">
-                            <label for="flightTo">Going To:</label> <input id="flightTo"
-                                                                           name="flightTo"
-                                                                           class="watermark watermarked autocomplete ui-corner-all"
-                                                                           autocomplete="off" title="City or Airport Code" value="">
+                            <label for="flightTo">Going To:</label> <select id="flightTo"
+                                                                            name="flightTo"
+                                                                            class="watermark watermarked autocomplete ui-corner-all"
+                                                                            autocomplete="off"
+                                                                            title="City or Airport Code" value="">
+
+                            <option value="brt">brt</option>
+                            </select>
                         </div>
                         <div class="clr"></div>
                     </div>
