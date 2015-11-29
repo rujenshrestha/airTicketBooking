@@ -96,6 +96,9 @@
                                     <td width="3%">
                                     	&nbsp;
                                     </td>
+                                    <td>
+                                        <a href="userDetailView.jsp?usrId=<%=tempMap.get("usrId")%>">Detail</a>
+                                    </td>
                                     <td>	
                                     	<a href="doDeleteUser.jsp?usrId=<%=tempMap.get("usrId")%>" title="DELETE"  onClick="return confirm('Do you really want to delete this User?')"><img src="../../images/action/delete.png" border="0"></a>
                                     </td>

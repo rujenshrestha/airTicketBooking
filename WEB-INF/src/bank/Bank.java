@@ -130,6 +130,37 @@ public class Bank {
 				}
 				
 			}
+			
+			
+			public String getBankDesc(String bnkId){
+				String bankName="";
+				try{
+					
+					con = dbcon.getDbConnection() ;
+					sql ="select bank_desc from bank where bnk_id = ?";
+					stmt = con.prepareStatement(sql); 
+					
+					stmt.setInt(1, Integer.parseInt(bnkId));
+					rs = stmt.executeQuery();
+					if(rs.next()){
+						bankName = rs.getString("bank_desc");
+					}
+				
+				} catch (SQLException errSql){
+					System.out.println("SQL Exception in getBankDesc:"+errSql);			
+				} catch (Exception err){
+					System.out.println("Exception in getBankDesc:"+err);
+				} finally {
+					try { 
+							if (rs != null) rs.close();
+							if (stmt != null) stmt.close();
+							if (con != null) con.close();
+					} catch (SQLException errSql){}
+				}
+				
+				return bankName;
+				
+			}
 		 }
 
 

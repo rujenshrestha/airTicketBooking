@@ -3,6 +3,7 @@ package user;
 import java.sql.*;
 import java.util.*;
 
+import bank.Bank;
 import dbconnection.DbConnection;
 
 public class User {
@@ -61,9 +62,10 @@ public class User {
 				stmt = con.prepareStatement(sql); 
 				stmt.setInt(1,Integer.parseInt(usrId));
 				rs = stmt.executeQuery();
+
 				
 				result  = new ArrayList();	
-				while ( rs.next() ) {
+				if ( rs.next() ) {
 					resultMap = new HashMap();
 					
 					resultMap.put("firstName",rs.getString("first_name"));
@@ -75,6 +77,16 @@ public class User {
 					resultMap.put("emailId",rs.getString("email_id"));
 					resultMap.put("bankId",rs.getString("bank_id"));
 					resultMap.put("accountNo",rs.getString("account_no"));
+					
+					sql="select * from authentication where id = ? and role_cd ='U'";
+					stmt = con.prepareStatement(sql);
+					stmt.setInt(1,Integer.parseInt(usrId));
+					rs = stmt.executeQuery();
+					if(rs.next()){
+						resultMap.put("username", rs.getString("username"));
+						resultMap.put("pwd", rs.getString("pwd"));
+						resultMap.put("statusCd", rs.getString("status_cd"));
+					}
 					
 					result.add(resultMap);
 				}
