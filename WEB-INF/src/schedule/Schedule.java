@@ -66,7 +66,6 @@ public class Schedule {
 				}
 
 
-
 				
 				public void updateSchedule(String schId,String alnId,String fromLocId,String toLocId,
 						String price,String time,String date,String flightClass,
@@ -135,6 +134,9 @@ public class Schedule {
 						stmt.setString(7,flightClass);
 						stmt.setInt(8,Integer.parseInt(seatQnty));;
 						stmt.executeUpdate();
+						
+						
+						
 					
 					} catch (SQLException errSql){
 						System.out.println("SQL Exception in addSchedule:"+errSql);			

@@ -90,7 +90,7 @@
                                     <td width="10%"><strong>Departure Time</strong></td>
                                     <td width="2%"><strong>Class</strong></td>
                                     <td width="10%"><strong>Seat Quantity</strong></td>
-                                    <td colspan="2"><strong>Actions</strong></td>
+                                    <td colspan="3" align="center"><strong>Actions</strong></td>
                                   </tr>
                                   
 <%
@@ -115,6 +115,9 @@
                                     <td><%=tempMap.get("class")%></td>
                                     <td><%=tempMap.get("seatQnty")%></td>
                                     <td>
+                                        <a href="doStartReservation.jsp?schId=<%=tempMap.get("schId")%>&seatQnty=<%=tempMap.get("seatQnty") %>" title="RESERVE">RESERVE</a>
+                                    </td>
+                                    <td>
                                         <a href="editFlightSchedule.jsp?schId=<%=tempMap.get("schId")%>" title="EDIT"><img src="../../images/action/edit.png" border="0"></a>
                                     </td>
                                     <td>	
@@ -124,7 +127,7 @@
 			</tr>
 		 <%}%>
                                   <tr bgcolor="#FFFFFF">
-                                    <td colspan="12">&nbsp;</td>
+                                    <td colspan="13">&nbsp;</td>
                                   </tr>
                               </table>
 							  
