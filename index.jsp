@@ -7,16 +7,16 @@
 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 <title>Online air ticketing</title>
 <!-- Bootstrap -->
-<link href="./css/bootstrap.css" rel="stylesheet">
-<link href="./css/font-awesome.css" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="./css/custom.css" />
-<link rel="stylesheet" type="text/css" href="./css/slider.css" />
-<link rel="stylesheet" type="text/css" href="./css/slider2.css" />
+<link href="/airTicketBooking/css/bootstrap.css" rel="stylesheet">
+<link href="/airTicketBooking/css/font-awesome.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="/airTicketBooking/css/custom.css" />
+<link rel="stylesheet" type="text/css" href="/airTicketBooking/css/slider.css" />
+<link rel="stylesheet" type="text/css" href="/airTicketBooking/css/slider2.css" />
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 <!--[if lt IE 9]>
-    <script src="js/html5shiv.min.js"></script>
-    <script src="js/respond.min.js"></script>
+    <script type="text/javascript" src="/airTicketBooking/js/html5shiv.min.js"></script>
+    <script type="text/javascript" src="/airTicketBooking/js/respond.min.js"></script>
     <![endif]-->
 </head>    
 <body>
@@ -35,7 +35,7 @@
 							<span class="icon-bar"></span>
 						</button>
 						<a class="navbar-brand padding-top padding-left" href="#">
-							<img src="./images/header.jpg" width="100%">
+							<img src="/airTicketBooking/images/header.jpg" width="100%">
 						</a>
 					</div>
 					<div class="collapse navbar-collapse" id="myNavbar">
@@ -50,7 +50,7 @@
 								<a href="#">Services</a>
 							</li>
 							<li>
-								<a href="<%=request.getContextPath() + "/login/login.jsp"%>">Login/Sign
+								<a href="/airTicketBooking/login/login.jsp">Login/Sign
 									Up</a>
 							</li>
 							<!-- <li class="dropdown">
@@ -90,17 +90,17 @@
 						</ol>
 						<div class="carousel-inner">
 							<div class="item active">
-								<img src="./images/flight-route.jpg" width="100%"
+								<img src="/airTicketBooking/images/flight-route.jpg" width="100%"
 									alt="First slide"
 								>
 							</div>
 							<div class="item">
-								<img src="./images/m_flight.jpg" width="100%"
+								<img src="/airTicketBooking/images/m_flight.jpg" width="100%"
 									alt="Second slide"
 								>
 							</div>
 							<div class="item">
-								<img src="./images/m_flight2.jpg" width="100%"
+								<img src="/airTicketBooking/images/m_flight2.jpg" width="100%"
 									alt="Third slide"
 								>
 							</div>
@@ -125,7 +125,7 @@
 			<h3 class="padding-x">We operate with...</h3>
 			<a class="black" href="http://www.sitaair.com.np/index.php">
 				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-					<img src="./images/yeti.jpeg" width="50%" />
+					<img src="/airTicketBooking/images/yeti.jpeg" width="50%" />
 					<p></p>
 					<small>
 						<p>Yeti Airlines Domestic Pvt. Ltd. is an airline based in
@@ -136,7 +136,7 @@
 			</a>
 			<a class="black" href="https://www.buddhaair.com/">
 				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-					<img src="./images/buddha.jpeg" width="50%" />
+					<img src="/airTicketBooking/images/buddha.jpeg" width="50%" />
 					<p></p>
 					<small>
 						<p>Buddha Air Pvt. Ltd is an airline based in Jawalakhel,
@@ -147,7 +147,7 @@
 			</a>
 			<a class="black" href="http://www.sitaair.com.np/">
 				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-					<img src="./images/sita_air.jpg" width="50%" />
+					<img src="/airTicketBooking/images/sita_air.jpg" width="50%" />
 					<p></p>
 					<small>
 						<p>Sitar Air is an airline based in Sinamangal Ward,
@@ -159,7 +159,7 @@
 			</a>
 			<a class="black" href="http://www.sauryaairlines.com/">
 				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-					<img src="./images/saurya.png" width="50%" />
+					<img src="/airTicketBooking/images/saurya.png" width="50%" />
 					<p></p>
 					<small>
 						<p>Saurya Airlines Pvt. Ltd is an airline based in New
@@ -170,7 +170,7 @@
 			</a>
 			<a class="black" href="www.simrikairlines.com/">
 				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-					<img src="./images/simrik.jpg" width="50%" />
+					<img src="/airTicketBooking/images/simrik.jpg" width="50%" />
 					<p></p>
 					<small>
 						<p>Promoted by a group of distinguished aviator of repute with
@@ -181,7 +181,7 @@
 			</a>
 			<a class="black" href="www.taraair.com">
 				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-					<img src="./images/tara.jpg" width="50%" />
+					<img src="/airTicketBooking/images/tara.jpg" width="50%" />
 					<p></p>
 					<small>
 						<p>Tara Air is the newest and biggest airline service provider
@@ -192,7 +192,7 @@
 			</a>
 			<a class="black" href="www.gomaair.com">
 				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-					<img src="./images/goma.png" width="50%" />
+					<img src="/airTicketBooking/images/goma.png" width="50%" />
 					<p></p>
 					<small>
 						<p>Goma Air has started its operation from February 24, 2011
@@ -204,7 +204,7 @@
 			</a>
 			<a class="black" href="www.gorkhaairlines.com">
 				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-					<img src="./images/gorkha.jpg" width="50%" />
+					<img src="/airTicketBooking/images/gorkha.jpg" width="50%" />
 					<p></p>
 					<small>
 						<p>With the cultural and historical relations prevailing
@@ -215,7 +215,7 @@
 				</div>
 			</a>
 			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-				<img src="./images/guna_air.gif" width="50%" />
+				<img src="/airTicketBooking/images/guna_air.gif" width="50%" />
 				<p></p>
 				<small>
 					<p>Guna Airlines will serve both local as well as foreign
@@ -294,8 +294,8 @@
 	</div>
 	</div>
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-	<script src="./js/jquery.min.js"></script>
+	<script src="/airTicketBooking/js/jquery.min.js"></script>
 	<!-- Include all compiled plugins (below), or include individual files as needed -->
-	<script src="./js/bootstrap.min.js"></script>
+	<script src="/airTicketBooking/js/bootstrap.min.js"></script>
 </body>
 </html>

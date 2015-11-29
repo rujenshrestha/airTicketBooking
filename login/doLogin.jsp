@@ -51,7 +51,7 @@ try{
 				if(roleCd.matches("A")&& statusCd.matches("E")){
 					url = url+"/pages/adminPages/adminDashboard.jsp";
 					%>
-						<jsp:forward page="../pages/adminPages/adminDashboard.jsp" >
+						<jsp:forward page="/pages/adminPages/adminDashboard.jsp" >
 							<jsp:param name="msg" value="" />
 						</jsp:forward>
 					<%
@@ -59,7 +59,7 @@ try{
 				}else if(roleCd.matches("U")&& statusCd.matches("E")){
 					url = url+"/pages/userPages/userDashboard.jsp";
 					%>
-						<jsp:forward page="../pages/userPages/userDashboard.jsp" >
+						<jsp:forward page="/pages/userPages/userDashboard.jsp" >
 							<jsp:param name="msg" value="" />
 						</jsp:forward>
 					<%

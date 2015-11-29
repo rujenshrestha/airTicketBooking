@@ -10,8 +10,8 @@
 </head>
 
 <body topmargin="0" leftmargin="0" marginheight="0" marginwidth="0"> 
- <jsp:include page="../../include/header.jsp" />
- <jsp:include page="../../include/adminMenu.jsp" />
+ <jsp:include page="/include/header.jsp" />
+ <jsp:include page="/include/adminMenu.jsp" />
 	  
 <%
 String msg="";

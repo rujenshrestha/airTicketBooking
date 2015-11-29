@@ -6,6 +6,6 @@ session.removeAttribute("athId");
 session.removeAttribute("roleCd");
 %>
    
-   <jsp:forward page="../index.jsp">
+   <jsp:forward page="/index.jsp">
    	<jsp:param value="" name="msg"/>
    </jsp:forward>
