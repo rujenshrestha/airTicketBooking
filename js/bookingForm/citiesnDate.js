@@ -5,6 +5,8 @@ jQuery.fn.exists = function() {
 jQuery(document)
 		.ready(
 				function($) {
+
+
 					/* Common Functionality */
 					// Inner Content Scroll Class
 					var contentHeight = $("#entryInnerWrap").height();
@@ -31,6 +33,14 @@ jQuery(document)
 					var departureDate = (today.getMonth() + 1) + '/'
 							+ (today.getDate()) + '/' + today.getFullYear();
 					$("#departureDate").val(departureDate);
+
+
+					//date for date ADD form
+
+					var dateAF = (today.getMonth() + 1) + '/'
+							+ (today.getDate()) + '/' + today.getFullYear();
+					$("#dateAF").val(dateAF);
+
 					// Time Range Sliders
 					// Time of Day
 					$("#departTimeAmPm, #returnTimeAmPm").buttonset();
@@ -159,6 +169,8 @@ jQuery(document)
 										var departureDate = $("#departureDate")
 												.val();
 										var returnDate = $("#returnDate").val();
+
+
 										var departTimeFrame = $(
 												"#departTimeFrame").val()
 												.split(" - ");
@@ -176,6 +188,7 @@ jQuery(document)
 																		.val();
 															}
 														});
+
 										var returnTimeFrame = $(
 												"#returnTimeFrame").val()
 												.split(" - ");
@@ -338,3 +351,5 @@ jQuery(document)
 								$("#flightDemoComplete ul").html("");
 							});
 				});
+
+
