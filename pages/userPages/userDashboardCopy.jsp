@@ -19,6 +19,22 @@
 
 </head>
 <body>
+<%
+String flightFrom = request.getParameter("flightFrom").toString();
+String flightto = request.getParameter("flightto").toString();
+String departureDate = request.getParameter("departureDate").toString();
+String returnDate = request.getParameter("returnDate").toString();
+String departTimeFrame = request.getParameter("departTimeFrame").toString();
+String departTimeTod = "";
+String returnTimeFrame = request.getParameter("returnTimeFrame").toString();
+String returnTimeTod = "";
+String quantityAdult = request.getParameter("quantityAdult").toString();
+String quantityChild = request.getParameter("quantityChild").toString();
+String quantityInfant = request.getParameter("quantityInfant").toString();
+
+
+
+%>
 <div id="main-container" class="main-container">
     <div class="left-side" class="left">
         <div id="entryInnerWrap" class="entry-inner-wrap">
