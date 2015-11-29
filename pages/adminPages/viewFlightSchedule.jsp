@@ -6,9 +6,9 @@
 <head>
 
 <title>Online Air Ticketing</title>
-<link href="../../css/style.css" rel="stylesheet" type="text/css">
-<link href="../../css/ddmenu.css" rel="stylesheet" type="text/css" />
-    <script src="../../js/ddmenu.js" type="text/javascript"></script>
+<link href="/airTicketBooking/css/style.css" rel="stylesheet" type="text/css">
+<link href="/airTicketBooking/css/ddmenu.css" rel="stylesheet" type="text/css" />
+    <script src="/airTicketBooking/js/ddmenu.js" type="text/javascript"></script>
 </head>
 
 <body topmargin="0" leftmargin="0" marginheight="0" marginwidth="0"> 

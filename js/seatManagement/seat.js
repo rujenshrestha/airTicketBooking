@@ -2,7 +2,7 @@ $(document).ready(function() {
 
 	$('#check').blur(function() {
 		$.ajax({
-			url : '../../pages/userPages/doBookFlight.jsp',
+			url : '/airTicketBooking/pages/userPages/doBookFlight.jsp',
 			type: "post",
 			data : {
 				userName : $('#check').val(),

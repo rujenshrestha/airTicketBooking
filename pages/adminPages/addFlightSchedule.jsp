@@ -4,22 +4,22 @@
 <head>
 
     <title>Online Air Ticketing</title>
-    <link href="../../css/style.css" rel="stylesheet" type="text/css">
-    <link href="../../css/ddmenu.css" rel="stylesheet" type="text/css"/>
-    <link href="../../css/bookingForm/reset.css" rel="stylesheet">
+    <link href="/airTicketBooking/css/style.css" rel="stylesheet" type="text/css">
+    <link href="/airTicketBooking/css/ddmenu.css" rel="stylesheet" type="text/css"/>
+    <link href="/airTicketBooking/css/bookingForm/reset.css" rel="stylesheet">
     <link
-            href="../../css/bookingForm/ui-lightness/jquery-ui-1.9.0.custom.css"
+            href="/airTicketBooking/css/bookingForm/ui-lightness/jquery-ui-1.9.0.custom.css"
             rel="stylesheet">
-    <link href="../../css/bookingForm/style.css" rel="stylesheet">
+    <link href="/airTicketBooking/css/bookingForm/style.css" rel="stylesheet">
 
-    <script src="../../js/bookingForm/jquery-1.8.2.min.js"></script>
-    <script src="../../js/bookingForm/jquery-ui-1.9.0.custom.min.js"></script>
-    <script src="../../js/bookingForm/cssMakeup.js"></script>
-    <script src="../../js/bookingForm/citiesnDate.js"></script>
+    <script src="/airTicketBooking/js/bookingForm/jquery-1.8.2.min.js"></script>
+    <script src="/airTicketBooking/js/bookingForm/jquery-ui-1.9.0.custom.min.js"></script>
+    <script src="/airTicketBooking/js/bookingForm/cssMakeup.js"></script>
+    <script src="/airTicketBooking/js/bookingForm/citiesnDate.js"></script>
 
-    <script src="../../js/jquery-1.4.1.min.js" type="text/javascript"></script>
-    <script src="../../js/ddmenu.js" type="text/javascript"></script>
-    <script src="../../js/bookingForm/citiesnDate.js"></script>
+    <script src="/airTicketBooking/js/jquery-1.4.1.min.js" type="text/javascript"></script>
+    <script src="/airTicketBooking/js/ddmenu.js" type="text/javascript"></script>
+    <script src="/airTicketBooking/js/bookingForm/citiesnDate.js"></script>
 
 </head>
 

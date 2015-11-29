@@ -170,7 +170,7 @@ java.util.Iterator toLocList = loc.getlocationList().iterator();
                 <div class="clr"></div>
                 <div id="flightDemoLoading">
                     <img
-                            src="../../css/bookingForm/ui-lightness/images/ajax-loader.gif"
+                            src="/airTicketBooking/css/bookingForm/ui-lightness/images/ajax-loader.gif"
                             alt="Loading..."/>
 
                     <div class="clr"></div>
