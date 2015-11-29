@@ -1,4 +1,6 @@
 <!doctype html>
+<%@page import="location.Location" %>
+<%@page import="java.util.* " %>
 <html lang="us">
 <head>
     <meta charset="utf-8">
@@ -20,7 +22,13 @@
 </head>
 <body>
 
+<%
+Location loc = new Location();
+java.util.Iterator fromLocList = loc.getlocationList().iterator();
+java.util.Iterator toLocList = loc.getlocationList().iterator();
 
+
+%>
 <div id="main-container" class="main-container">
     <div class="left-side" class="left">
         <div id="entryInnerWrap" class="entry-inner-wrap">
@@ -32,23 +40,34 @@
                     <div id="flightDemo">
                         <div id="airportWrap">
                             <div id="flightFromWrap">
-                                <label for="flightFrom">Leaving From:</label> <select
+                                <label for="flightFrom">Leaving From:</label> 
+                                <select
                                     id="flightFrom" name="flightFrom"
                                     class="watermark watermarked autocomplete ui-corner-all"
                                     autocomplete="off" title="City or Airport Code" value="">
-
-                                    <option value="ktm">ktm</option>
-
+									
+									<%
+									while(fromLocList.hasNext()){
+										HashMap tempMap = (HashMap) fromLocList.next();
+									%>	
+                                    	<option value="<%=tempMap.get("locId")%>"><%=tempMap.get("locDesc")%></option>
+									<%} %>
                                 </select>
                             </div>
                             <div id="flightToWrap">
-                                <label for="flightTo">Going To:</label> <select id="flightTo"
+                                <label for="flightTo">Going To:</label> 
+                                <select id="flightTo"
                                                                                name="flightTo"
                                                                                class="watermark watermarked autocomplete ui-corner-all"
                                                                                autocomplete="off"
                                                                                title="City or Airport Code" value="">
 
-                                <option value="brt">brt</option>
+                                <%
+									while(toLocList.hasNext()){
+										HashMap tempMap = (HashMap) toLocList.next();
+									%>	
+                                    	<option value="<%=tempMap.get("locId")%>"><%=tempMap.get("locDesc")%></option>
+									<%} %>
 
                                 </select>
                             </div>

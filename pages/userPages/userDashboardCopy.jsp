@@ -1,4 +1,7 @@
 <!doctype html>
+<%@page import="location.Location" %>
+<%@page import="schedule.Schedule" %>
+<%@page import="java.util.* " %>
 <html lang="us">
 <head>
     <meta charset="utf-8">
@@ -20,18 +23,28 @@
 </head>
 <body>
 <%
-String flightFrom = request.getParameter("flightFrom").toString();
-String flightto = request.getParameter("flightto").toString();
+
+String fromLocId = request.getParameter("flightFrom").toString();
+String toLocId = request.getParameter("flightTo").toString();
 String departureDate = request.getParameter("departureDate").toString();
 String returnDate = request.getParameter("returnDate").toString();
 String departTimeFrame = request.getParameter("departTimeFrame").toString();
-String departTimeTod = "";
-String returnTimeFrame = request.getParameter("returnTimeFrame").toString();
-String returnTimeTod = "";
-String quantityAdult = request.getParameter("quantityAdult").toString();
-String quantityChild = request.getParameter("quantityChild").toString();
-String quantityInfant = request.getParameter("quantityInfant").toString();
+String departTimeTod = request.getParameter("departTimeTod").toString();
 
+
+System.out.println("values: "+fromLocId+"..."+toLocId+"..."+departureDate+"..."+departTimeFrame);
+
+Schedule sch = new Schedule();
+
+String fromLocDesc="";
+String toLocDesc="";
+String airlineDesc="";
+
+java.util.Iterator schList = sch.getSchedule(fromLocId, toLocId,"alnId", departureDate,"time").iterator();
+
+Location loc = new Location();
+java.util.Iterator fromLocList = loc.getlocationList().iterator();
+java.util.Iterator toLocList = loc.getlocationList().iterator();
 
 
 %>
@@ -50,7 +63,12 @@ String quantityInfant = request.getParameter("quantityInfant").toString();
                                 class="watermark watermarked autocomplete ui-corner-all"
                                 autocomplete="off" title="City or Airport Code" value="">
 
-                            <option value="ktm">ktm</option>
+                            		<%
+									while(fromLocList.hasNext()){
+										HashMap tempMap = (HashMap) fromLocList.next();
+									%>	
+                                    	<option value="<%=tempMap.get("locId")%>"><%=tempMap.get("locDesc")%></option>
+									<%} %>
 
                         </select>
                         </div>
@@ -61,7 +79,12 @@ String quantityInfant = request.getParameter("quantityInfant").toString();
                                                                             autocomplete="off"
                                                                             title="City or Airport Code" value="">
 
-                            <option value="brt">brt</option>
+                            <%
+									while(toLocList.hasNext()){
+										HashMap tempMap = (HashMap) toLocList.next();
+									%>	
+                                    	<option value="<%=tempMap.get("locId")%>"><%=tempMap.get("locDesc")%></option>
+									<%} %>
                             </select>
                         </div>
                         <div class="clr"></div>
@@ -180,8 +203,18 @@ String quantityInfant = request.getParameter("quantityInfant").toString();
     <div class="right-side">
 
         <ul style="top:200px;">
-            <li> flight number 87687 form kathmandu to pokhara date 2042/32/11 time 3:32 <input type="button" name="book" value="book"> </li>
-
+        	<%
+        		while(schList.hasNext()){
+        			HashMap tempMap = (HashMap) schList.next();
+        			fromLocDesc= loc.getlocationDesc(tempMap.get("fromLocId").toString());
+        			toLocDesc= loc.getlocationDesc(tempMap.get("toLocId").toString());
+        	%>
+	            <li> flight number <%=tempMap.get("schId")%> from <%=fromLocDesc%> to 
+	            	 <%=toLocDesc%> date <%=tempMap.get("flightDate")%> 
+	            	 time <%=tempMap.get("flightTime")%> 
+	            <input type="button" name="book" value="book"> 
+	            </li>
+			<%} %>
         </ul>
 
         </div>
