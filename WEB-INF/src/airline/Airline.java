@@ -129,6 +129,35 @@ public class Airline {
 					}
 					
 				}
+				
+				public String getAirlineDesc(String alnId){
+					String airlineDesc="";
+					try{
+						
+						con = dbcon.getDbConnection() ;
+						sql ="select airline_desc from airline where aln_id = ?";
+						stmt = con.prepareStatement(sql); 
+						
+						stmt.setInt(1, Integer.parseInt(alnId));
+						rs = stmt.executeQuery();
+						if(rs.next()){
+							airlineDesc= rs.getString("airline_desc");
+						}
+					
+					} catch (SQLException errSql){
+						System.out.println("SQL Exception in getAirlineDesc:"+errSql);			
+					} catch (Exception err){
+						System.out.println("Exception in getAirlineDesc:"+err);
+					} finally {
+						try { 
+								if (rs != null) rs.close();
+								if (stmt != null) stmt.close();
+								if (con != null) con.close();
+						} catch (SQLException errSql){}
+					}
+					
+					return airlineDesc;
+				}
 			 }
 
 

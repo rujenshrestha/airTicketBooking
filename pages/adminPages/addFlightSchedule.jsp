@@ -130,10 +130,7 @@ java.util.Iterator toLocList = toLoc.getlocationList().iterator();
                                     <td>&nbsp;</td>
                                     <td>&nbsp;</td>
                                     <td>Date </td>
-                                    <td> 
-                                    	<input id="departureDate" name="departureDate" 
-                                    	  class="datepicker watermark watermarked ui-corner-all" 
-                                    	  value="" /></td>
+                                    <td><input type="text" name="date" maxlength="50" required></td>
                                     <td width="16%">&nbsp;</td>
                                   </tr>   
                                   <tr bgcolor="#FFFFFF">

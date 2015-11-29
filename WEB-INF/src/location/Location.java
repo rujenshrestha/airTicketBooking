@@ -129,5 +129,36 @@ public class Location {
 					}
 					
 				}
+				
+				
+				public String getlocationDesc(String locId){
+					String locDesc="";
+					try{
+						
+						con = dbcon.getDbConnection() ;
+						sql ="select loc_desc from location where loc_id = ?";
+						stmt = con.prepareStatement(sql); 
+						
+						stmt.setInt(1, Integer.parseInt(locId));
+						rs = stmt.executeQuery();
+						
+						if(rs.next()){
+							locDesc = rs.getString("loc_desc");
+						}
+					
+					} catch (SQLException errSql){
+						System.out.println("SQL Exception in getlocationDesc:"+errSql);			
+					} catch (Exception err){
+						System.out.println("Exception in getlocationDesc:"+err);
+					} finally {
+						try { 
+								if (rs != null) rs.close();
+								if (stmt != null) stmt.close();
+								if (con != null) con.close();
+						} catch (SQLException errSql){}
+					}
+					
+					return locDesc;
+				}
 			 }
 
