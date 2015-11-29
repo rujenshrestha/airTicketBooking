@@ -9,15 +9,17 @@
 </head>
 
 <%
-String fullName = request.getParameter("fullname").toString();
-String username = request.getParameter("username").toString();
-String password = request.getParameter("password").toString();
-String address = request.getParameter("address").toString();
-String phone = request.getParameter("phone").toString();
-String mobileNo = request.getParameter("mobileNo").toString();
-String email = request.getParameter("email").toString();
+String alnId = request.getParameter("alnId").toString();
+String fromLocId = request.getParameter("fromLocId").toString();
+String toLocId = request.getParameter("toLocId").toString();
+String price = request.getParameter("price").toString();
+String time = request.getParameter("time").toString();
+String date = request.getParameter("date").toString();
+String flightClass = request.getParameter("class").toString();
+String seatQnty = request.getParameter("seatQnty").toString();
 
-Admin admin = new Admin();
+Schedule sch = new Schedule();
+
 
 %>
 <body>
@@ -25,13 +27,18 @@ Admin admin = new Admin();
 <%
 
 try{
-		admin.addAdmin(fullName, address, phone, mobileNo, email,username,password);
+		sch.addSchedule(alnId, fromLocId, toLocId, price, time, date, flightClass, seatQnty);
 		
 }catch (Exception err){
-	System.out.println("Exception in doAddAdmin: "+err);
+	System.out.println("Exception in doAddFlightSchedule: "+err);
+	%>
+		<jsp:forward page="addFlightSchedule.jsp" >
+			<jsp:param name="msg" value="Flight Schedule Could Not Be Added." />
+		</jsp:forward>
+	<%
 }%>
-		<jsp:forward page="addAdmin.jsp" >
-			<jsp:param name="msg" value="Admin Added Successfully." />
+		<jsp:forward page="addFlightSchedule.jsp" >
+			<jsp:param name="msg" value="Flight Schedule Added Successfully." />
 		</jsp:forward>
 
 </body>

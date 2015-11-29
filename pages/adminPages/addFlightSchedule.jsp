@@ -132,7 +132,20 @@ java.util.Iterator toLocList = toLoc.getlocationList().iterator();
                                     <td>Date </td>
                                     <td><input type="text" name="date" maxlength="50" required></td>
                                     <td width="16%">&nbsp;</td>
-                                  </tr>   
+                                  </tr>
+                                  <tr bgcolor="#FFFFFF">
+                                    <td width="2%">&nbsp;</td>
+                                    <td width="22%">&nbsp;</td>
+                                    <td width="15%">Class </td>
+                                    <td width="58%">
+                                    <select name="class">
+                                    	 <option value="A">A</option>
+                                    	 <option value="B">B</option>
+                                    	 <option value="C">C</option>	
+                                    	</select>
+                                     </td>
+                                    <td width="16%">&nbsp;</td> 
+                                   </tr> 
                                   <tr bgcolor="#FFFFFF">
                                     <td>&nbsp;</td>
                                     <td>&nbsp;</td>
