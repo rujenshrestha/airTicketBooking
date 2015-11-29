@@ -1,5 +1,5 @@
 
-<%@page contentType="text/html; charset=iso-8859-1" language="java" import="java.sql.*,java.util.*" errorPage="" %>
+<%@page contentType="text/html; charset=iso-8859-1" language="java" errorPage="" %>
 
 <jsp:useBean id="us" class="np.com.ntech.global.admin.User" />
 <%//if(!us.isIPExist(request.getRemoteAddr())){

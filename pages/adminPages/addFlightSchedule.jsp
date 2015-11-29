@@ -1,18 +1,17 @@
-<%@page contentType="text/html; charset=iso-8859-1" language="java" import="java.sql.*,java.util.*" errorPage="" %>
-<%@page import="airline.Airline" %>
-<%@page import="location.Location" %>
+<%@page contentType="text/html; charset=iso-8859-1" language="java" import="airline.Airline,location.Location" errorPage="" %>
+<%@page import="java.util.HashMap" %>
 <html>
 <head>
 
-<title>Online Air Ticketing</title>
-<link href="../../css/style.css" rel="stylesheet" type="text/css">
-<link href="../../css/ddmenu.css" rel="stylesheet" type="text/css" />
+    <title>Online Air Ticketing</title>
+    <link href="../../css/style.css" rel="stylesheet" type="text/css">
+    <link href="../../css/ddmenu.css" rel="stylesheet" type="text/css"/>
     <script src="../../js/ddmenu.js" type="text/javascript"></script>
     <script src="../../js/bookingForm/citiesnDate.js"></script>
 </head>
 
-<body topmargin="0" leftmargin="0" marginheight="0" marginwidth="0"> 
- <jsp:include page="../../include/header.jsp" />
+<body topmargin="0" leftmargin="0" marginheight="0" marginwidth="0">
+<jsp:include page="../../include/header.jsp" />
  <jsp:include page="../../include/adminMenu.jsp" />
 	  
 <%
