@@ -18,7 +18,7 @@
     <script src="js/html5shiv.min.js"></script>
     <script src="js/respond.min.js"></script>
     <![endif]-->
-</head>
+</head> 
 <body>
 	<div class="container-fluid">
 		<div class="row">
