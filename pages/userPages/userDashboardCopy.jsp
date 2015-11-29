@@ -218,7 +218,7 @@ java.util.Iterator toLocList = loc.getlocationList().iterator();
 	            <li> flight number <%=tempMap.get("schId")%> from <%=fromLocDesc%> to 
 	            	 <%=toLocDesc%> date <%=tempMap.get("flightDate")%> 
 	            	 time <%=tempMap.get("flightTime")%> 
-	            <input type="button" name="book" value="book"> 
+	            <input type="submit" name="book" value="book"> 
 	            </li>
 	          </form>
 			<%} %>

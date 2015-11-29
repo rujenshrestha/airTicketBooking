@@ -1,4 +1,8 @@
 <!doctype html>
+<%@page import="schedule.Schedule" %>
+<%@page import="location.Location" %>
+<%@page import="user.User" %>
+<%@page import="java.util.* " %>
 <html lang="us">
 <head>
 <meta charset="utf-8">
@@ -19,19 +23,54 @@
 
 </head>
 <body>
+<% 
+String schId= request.getParameter("schId").toString();
+String usrId="";
+String name ="";
+String fromLocDesc="";
+String toLocDesc="";
+
+Schedule sch= new Schedule();
+User user = new User();
+Location loc = new Location();
+
+if(session.getAttribute("id")!=null){
+	usrId = session.getAttribute("id").toString();
+	System.out.println("usrId::"+usrId);
+	java.util.Iterator userDetail = user.getUserDetail(usrId).iterator();
+	while(userDetail.hasNext()){
+		HashMap tempMap =(HashMap) userDetail.next();
+		name = tempMap.get("firstName").toString()+" "+
+			   tempMap.get("middleName").toString()+" "+
+			   tempMap.get("lastName").toString();
+	}
+}
+
+java.util.Iterator schDetail = sch.getScheduleDetail(schId).iterator();
+
+%>
+
 	<div id="main-container" class="main-container">
 		<div class="left-side" class="left">
 
-			<form name="bookForm" action="doBookFlight.jsp" method="post">
-				<label>Name : </label><input type="text">
-				<label>Address : </label><input type="text">
-				<label>Mobile No : </label><input type="text">
-				<label>Departure from : </label><input type="text">
-				<label>Going to : </label><input type="text">
-				<label>date : </label><input type="text">
-				<label>number of passenger adult: </label><input type="text">
-				<label>number of passenger child: </label><input type="text">
-				<label>number of passenger infant: </label><input type="text">
+			<form name="bookForm" action="doBookFlight.jsp?schId=<%=schId%>&usrId=<%=usrId %>" method="post">
+			<%
+				while(schDetail.hasNext()){
+					HashMap tempMap = (HashMap) schDetail.next();
+					fromLocDesc= loc.getlocationDesc(tempMap.get("fromLocId").toString());
+					toLocDesc= loc.getlocationDesc(tempMap.get("toLocId").toString());
+			%>
+				<label>Name : <%=name%></label>
+				<br>
+				<label>Departure from : <%=fromLocDesc%></label>
+				<br>
+				<label>Going to : <%=toLocDesc%></label>
+				<br>
+				<label>Flight Date : <%=tempMap.get("flightDate")%></label>
+				<br>
+				<label>Flight Time: <%=tempMap.get("flightTime")%></label>
+				<br>
+				<%} %>
 				<label>Selected Seat: </label><input type="text" id="selectedSeat" readonly>
 
 			</form>
