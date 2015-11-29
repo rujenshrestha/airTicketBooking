@@ -58,7 +58,38 @@ public class Reservation {
 				}
 
 
-
+				public List getReservedSeat(String schId){
+					try{
+						
+						con = dbcon.getDbConnection() ;
+						sql ="select * from reservation where sch_id=? and seat_status = 'R'";
+						stmt = con.prepareStatement(sql); 
+						stmt.setInt(1,Integer.parseInt(schId));
+						rs = stmt.executeQuery();
+						
+						result  = new ArrayList();	
+						while ( rs.next() ) {
+							resultMap = new HashMap();
+							
+							resultMap.put("seatNo",rs.getString("seat_no"));
+							
+							result.add(resultMap);
+						}
+					} catch (SQLException errSql){
+						System.out.println("SQL Exception in getReservedSeat:"+errSql);			
+					} catch (Exception err){
+						System.out.println("Exception in getReservedSeat:"+err);
+					} finally {
+						try { 
+							if (rs != null) rs.close();
+							if (stmt != null) stmt.close();
+							if (con != null) con.close();
+						} catch (SQLException errSql){}
+					}
+					
+					return result;
+					      
+				}
 				
 				public void setReservation(String schId,String seatQnty){
 					

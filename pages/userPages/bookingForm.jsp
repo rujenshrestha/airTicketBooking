@@ -2,6 +2,7 @@
 <%@page import="schedule.Schedule" %>
 <%@page import="location.Location" %>
 <%@page import="user.User" %>
+<%@page import="reservation.Reservation" %>
 <%@page import="java.util.* " %>
 <html lang="us">
 <head>
@@ -12,7 +13,7 @@
 	href="/airTicketBooking/css/bookingForm/ui-lightness/jquery-ui-1.9.0.custom.css"
 	rel="stylesheet">
 <link href="/airTicketBooking/css/bookingForm/style.css" rel="stylesheet">
-
+<link href="/airTicketBooking/css/ddmenu.css" rel="stylesheet" type="text/css" />
 <script src="/airTicketBooking/js/bookingForm/jquery-1.8.2.min.js"></script>
 <script src="/airTicketBooking/js/bookingForm/jquery-ui-1.9.0.custom.min.js"></script>
 <script src="/airTicketBooking/js/bookingForm/cssMakeup.js"></script>
@@ -20,6 +21,7 @@
 
 <script src="/airTicketBooking/js/jquery-1.4.1.min.js" type="text/javascript"></script>
 <script src="/airTicketBooking/js/seatManagement/seat.js" type="text/javascript"></script>
+<script src="/airTicketBooking/js/ddmenu.js" type="text/javascript"></script>
 
 </head>
 <body>
@@ -33,6 +35,16 @@ String toLocDesc="";
 Schedule sch= new Schedule();
 User user = new User();
 Location loc = new Location();
+Reservation res = new Reservation();
+
+java.util.Iterator reservedSeatList = res.getReservedSeat(schId).iterator();
+String temp="";
+while(reservedSeatList.hasNext()){
+	HashMap tempMap = (HashMap) reservedSeatList.next();
+	temp=temp+tempMap.get("seatNo").toString()+",";
+}
+String seatList= temp.substring(0,temp.length()-1);
+System.out.println("SEAT LIST::::"+seatList);
 
 if(session.getAttribute("id")!=null){
 	usrId = session.getAttribute("id").toString();
@@ -51,6 +63,8 @@ java.util.Iterator schDetail = sch.getScheduleDetail(schId).iterator();
 %>
 
 	<div id="main-container" class="main-container">
+	 <jsp:include page="../../include/header.jsp" />
+ 		<jsp:include page="../../include/userMenu.jsp" />
 		<div class="left-side" class="left">
 
 			<form name="bookForm" action="doBookFlight.jsp?schId=<%=schId%>&usrId=<%=usrId %>" method="post">
@@ -71,8 +85,9 @@ java.util.Iterator schDetail = sch.getScheduleDetail(schId).iterator();
 				<label>Flight Time: <%=tempMap.get("flightTime")%></label>
 				<br>
 				<%} %>
-				<label>Selected Seat: </label><input type="text" id="selectedSeat" readonly>
-
+				<label>Selected Seat: </label><input type="text" id="selectedSeat" name="selectedSeat" readonly>
+				<br>
+				<input type="submit" value="book">
 			</form>
 
 
@@ -85,7 +100,7 @@ java.util.Iterator schDetail = sch.getScheduleDetail(schId).iterator();
 				<h2 style="font-size: 1.2em;">Choose seats by clicking the
 					corresponding seat in the layout below:</h2>
 				<div id="holder">
-					<span id="bookedSeatSpan" hidden>21,2,3</span>
+					<span id="bookedSeatSpan" hidden><%=seatList%></span>
 					<ul id="place">
 
 					</ul>
@@ -114,7 +129,7 @@ java.util.Iterator schDetail = sch.getScheduleDetail(schId).iterator();
 
 
 		</div>
-
+		<jsp:include page="../../include/footer.jsp" />
 	</div>
 </body>
 </html>
