@@ -43,8 +43,10 @@ $(document).ready(function() {
 										+ settings.rowCssPrefix + i.toString()
 										+ ' ' + settings.colCssPrefix
 										+ j.toString();
+
 								if ($.isArray(reservedSeat)
 										&& $.inArray(seatNo, reservedSeat) != -1) {
+
 									className += ' ' + settings.selectedSeatCss;
 								}
 								str.push('<li class="' + className + '"'
@@ -63,9 +65,24 @@ $(document).ready(function() {
 					//init();
 
 					//Case II: If already booked
-					
-					var bookedSeats = [ 5, 10, 11 ];
-					
+					var bookedSeats = [];
+					var bookedSeatSpan = document.getElementById("bookedSeatSpan").innerHTML;
+
+
+					var seatNo = bookedSeatSpan.split(",");
+
+					var a=1;
+					for(var i=0;i<seatNo.length;i++){
+						bookedSeats[i]=parseInt(seatNo[i]);
+						//console.log(a+a);
+						//console.log(parseInt(seatNo[i])+parseInt(seatNo[i]))
+					}
+
+
+
+					//var bookedSeats = seatNo;
+
+
 					
 					init(bookedSeats);
 
@@ -87,7 +104,8 @@ $(document).ready(function() {
 										function(index, value) {
 											str.push($(this).attr('title'));
 										});
-								alert(str.join(','));
+
+								//alert(str.join(','));
 							})
 
 					$('#btnShowNew').click(
@@ -99,6 +117,8 @@ $(document).ready(function() {
 											item = $(this).attr('title');
 											str.push(item);
 										});
-								alert(str.join(','));
+								$('#selectedSeat').val("");
+								$('#selectedSeat').val(str.join(','));
+								//alert(str.join(','));
 							})
 				});

@@ -27,6 +27,12 @@
 				<label>Address : </label><input type="text">
 				<label>Mobile No : </label><input type="text">
 				<label>Departure from : </label><input type="text">
+				<label>Going to : </label><input type="text">
+				<label>date : </label><input type="text">
+				<label>number of passenger adult: </label><input type="text">
+				<label>number of passenger child: </label><input type="text">
+				<label>number of passenger infant: </label><input type="text">
+				<label>Selected Seat: </label><input type="text" id="selectedSeat" readonly>
 
 			</form>
 
@@ -40,7 +46,9 @@
 				<h2 style="font-size: 1.2em;">Choose seats by clicking the
 					corresponding seat in the layout below:</h2>
 				<div id="holder">
+					<span id="bookedSeatSpan" hidden>21,2,3</span>
 					<ul id="place">
+
 					</ul>
 				</div>
 				<div style="width: 600px; text-align: center; overflow: auto">
@@ -57,8 +65,8 @@
 					</ul>
 				</div>
 				<div style="width: 580px; text-align: left; margin: 5px">
-					<input type="button" id="btnShowNew" value="Show Selected Seats" />
-					<input type="button" id="btnShow" value="Show All" />
+					<input type="button" id="btnShowNew" value="Book Selected Seats" />
+					<%--<input type="button" id="btnShow" value="Show All" />--%>
 				</div>
 
 
@@ -67,9 +75,7 @@
 
 
 		</div>
-		<div>
-			<input type="text" id="check" value="haha"/>
-		</div>
+
 	</div>
 </body>
 </html>
