@@ -214,11 +214,13 @@ java.util.Iterator toLocList = loc.getlocationList().iterator();
         			fromLocDesc= loc.getlocationDesc(tempMap.get("fromLocId").toString());
         			toLocDesc= loc.getlocationDesc(tempMap.get("toLocId").toString());
         	%>
+        	<form name="f1" action="bookingForm.jsp?schId=<%=tempMap.get("schId")%>" method="post">
 	            <li> flight number <%=tempMap.get("schId")%> from <%=fromLocDesc%> to 
 	            	 <%=toLocDesc%> date <%=tempMap.get("flightDate")%> 
 	            	 time <%=tempMap.get("flightTime")%> 
 	            <input type="button" name="book" value="book"> 
 	            </li>
+	          </form>
 			<%} %>
         </ul>
 
