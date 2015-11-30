@@ -95,8 +95,7 @@ s, .strike {
 
 .right-side {
     float: right;
-    width: 613px;
-    height: 600px;
+    width: 690px;
     position: relative;
 
 }
@@ -798,3 +797,28 @@ ul.bottom-content-widgets .ui-tooltip-content {
     float: left;
 }
 
+
+/*UserDashboard copy Schedule list css*/
+
+.right-side form{
+    display: block;
+    font-weight: bold;
+    font-size: 17px;
+    height: 25px;
+    padding: 20px 10px 20px 0px;
+
+}
+
+.right-side form input:hover {
+    color: #ec8e0c;
+    text-shadow: 1px 1px 1px #ffec8b;
+    border: 1px solid #f7b850;
+    background: #fdf5ce url("ui-lightness/images/ui-bg_highlight-soft_75_ffe45c_1x100.png") 50% 50% repeat-x;
+}
+
+.right-side form input {
+    height: 20px;
+    border: 2px solid #00BCD4;
+    background: azure;
+    float: right;
+}

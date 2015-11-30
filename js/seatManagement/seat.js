@@ -118,7 +118,7 @@ $(document).ready(function() {
 											str.push(item);
 										});
 								$('#selectedSeat').val("");
-								$('#selectedSeat').val(str.join(','));
+								$('#selectedSeat').val(str.join(',').toString());
 								//alert(str.join(','));
 							})
 				});

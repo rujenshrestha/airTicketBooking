@@ -206,22 +206,20 @@ java.util.Iterator toLocList = loc.getlocationList().iterator();
     </div>
     <div class="right-side">
 
-        <ul style="top:200px;">
+
         	<%
         		while(schList.hasNext()){
         			HashMap tempMap = (HashMap) schList.next();
         			fromLocDesc= loc.getlocationDesc(tempMap.get("fromLocId").toString());
         			toLocDesc= loc.getlocationDesc(tempMap.get("toLocId").toString());
         	%>
-        	<form name="f1" action="bookingForm.jsp?schId=<%=tempMap.get("schId")%>" method="post">
-	            <li> flight number <%=tempMap.get("schId")%> from <%=fromLocDesc%> to 
+        	<form  name="f1" action="bookingForm.jsp?schId=<%=tempMap.get("schId")%>" method="post">
+	             flight number <%=tempMap.get("schId")%> from <%=fromLocDesc%> to
 	            	 <%=toLocDesc%> date <%=tempMap.get("flightDate")%> 
 	            	 time <%=tempMap.get("flightTime")%> 
 	            <input type="submit" name="book" value="book"> 
-	            </li>
 	          </form>
 			<%} %>
-        </ul>
 
         </div>
 

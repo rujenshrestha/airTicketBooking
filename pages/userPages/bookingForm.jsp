@@ -87,7 +87,7 @@ java.util.Iterator schDetail = sch.getScheduleDetail(schId).iterator();
 				<label>Flight Time: <input type="text" value="<%=tempMap.get("flightTime")%>" readonly></label>
 
 				<%} %>
-				<label>Selected Seat: <input type="text" id="selectedSeat" name="selectedSeat" readonly required></label>
+				<label>Selected Seat: <input type="text" value="" id="selectedSeat" name="selectedSeat" readonly required></label>
 
 				<input id="bookFlight" type="submit" value="book">
 			</form>
