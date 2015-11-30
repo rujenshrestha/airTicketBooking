@@ -160,7 +160,7 @@ public class Transaction {
 							if (con != null) con.close();
 						} catch (SQLException errSql){}
 					}
-					
+					 
 					return result;
 					      
 				}

@@ -38,7 +38,7 @@ Schedule sch= new Schedule();
 User user = new User();
 Location loc = new Location();
 Reservation res = new Reservation();
-
+ 
 java.util.Iterator reservedSeatList = res.getReservedSeat(schId).iterator();
 String temp="";
 while(reservedSeatList.hasNext()){

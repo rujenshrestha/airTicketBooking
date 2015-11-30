@@ -36,12 +36,12 @@ Location loc = new Location();
 java.util.Iterator fromLocList = loc.getlocationList().iterator();
 java.util.Iterator toLocList = loc.getlocationList().iterator();
 
-
+ 
 %>
 
 <div id="main-container" class="main-container">
  <jsp:include page="../../include/header.jsp" />
- <jsp:include page="../../include/userMenu.jsp" />
+ <jsp:include page="../../include/userMenu.jsp" />  
  <div><font color="#FF0000"><%if(!msg.matches("")){ %><%=msg %><%} %></font> </div>
     <div class="left-side" class="left">
         <div id="entryInnerWrap" class="entry-inner-wrap">

@@ -39,7 +39,7 @@ while(i<seatList.length()){
 	result.add(resultMap);
 	totalSeat++;
 	i++;
-}
+} 
 
 System.out.println("total seat:: "+totalSeat);
 
