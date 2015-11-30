@@ -36,12 +36,12 @@ try{
 }catch (Exception err){
 	System.out.println("Exception in doAddFlightSchedule: "+err);
 	%>
-		<jsp:forward page="addFlightSchedule.jsp" >
+		<jsp:forward page="/pages/adminPages/addFlightSchedule.jsp" >
 			<jsp:param name="msg" value="Flight Schedule Could Not Be Added." />
 		</jsp:forward>
 	<%
 }%>
-		<jsp:forward page="addFlightSchedule.jsp" >
+		<jsp:forward page="/pages/adminPages/addFlightSchedule.jsp" >
 			<jsp:param name="msg" value="Flight Schedule Added Successfully." />
 		</jsp:forward>
 
