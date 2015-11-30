@@ -28,6 +28,10 @@ while(i<seatList.length()){
 	while(seatList.charAt(i)!= ',' ){
 		seatNo = seatNo+seatList.charAt(i);
 		i++;
+		
+		if(i==seatList.length()){
+			break;
+		}
 	}
 	
 	System.out.println("seat no:: "+seatNo);
@@ -39,6 +43,9 @@ while(i<seatList.length()){
 
 System.out.println("total seat:: "+totalSeat);
 
+Reservation res = new Reservation();
+Transaction txn = new Transaction();
+
 %>
 <body>
 
@@ -46,12 +53,20 @@ System.out.println("total seat:: "+totalSeat);
 
 try{
 		
+		txn.addTransaction(schId, usrId, totalSeat);
+		res.reserveSeat(result,schId,usrId);
+		
 		
 }catch (Exception err){
 	System.out.println("Exception in doAddAdmin: "+err);
+	%>
+		<jsp:forward page="userDashboard.jsp" >
+			<jsp:param name="msg" value="Sorry, seat could not be booked." />
+		</jsp:forward>
+	<%
 }%>
-		<jsp:forward page="addAdmin.jsp" >
-			<jsp:param name="msg" value="Admin Added Successfully." />
+		<jsp:forward page="userDashboard.jsp" >
+			<jsp:param name="msg" value="Seat Booked Succesfully." />
 		</jsp:forward>
 
 </body>

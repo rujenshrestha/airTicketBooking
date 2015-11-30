@@ -91,6 +91,42 @@ public class Reservation {
 					      
 				}
 				
+				
+				public List getReservedSeatByUser(String usrId,String schId){
+					try{
+						
+						con = dbcon.getDbConnection() ;
+						sql ="select * from reservation where sch_id=? and "
+								+ "seat_status = 'R' and usr_id=?";
+						stmt = con.prepareStatement(sql); 
+						stmt.setInt(1,Integer.parseInt(schId));
+						stmt.setInt(2,Integer.parseInt(usrId));
+						rs = stmt.executeQuery();
+						
+						result  = new ArrayList();	
+						while ( rs.next() ) {
+							resultMap = new HashMap();
+							
+							resultMap.put("seatNo",rs.getString("seat_no"));
+							
+							result.add(resultMap);
+						}
+					} catch (SQLException errSql){
+						System.out.println("SQL Exception in getReservedSeatByUser:"+errSql);			
+					} catch (Exception err){
+						System.out.println("Exception in getReservedSeatByUser:"+err);
+					} finally {
+						try { 
+							if (rs != null) rs.close();
+							if (stmt != null) stmt.close();
+							if (con != null) con.close();
+						} catch (SQLException errSql){}
+					}
+					
+					return result;
+					      
+				}
+				
 				public void setReservation(String schId,String seatQnty){
 					
 					int totalSeat=0;
@@ -117,6 +153,42 @@ public class Reservation {
 						System.out.println("SQL Exception in setReservation:"+errSql);			
 					} catch (Exception err){
 						System.out.println("Exception in setReservation:"+err);
+					} finally {
+						try { 
+							if (rs != null) rs.close();
+							if (stmt != null) stmt.close();
+							if (con != null) con.close();
+						} catch (SQLException errSql){}
+					}
+					
+					      
+				}
+				
+				
+				
+				public void reserveSeat(List l,String schId,String usrId){
+					
+					java.util.Iterator seatList = l.iterator();
+					try{
+						
+						con = dbcon.getDbConnection() ;
+						while(seatList.hasNext()){
+							HashMap tempMap = (HashMap) seatList.next();
+							
+							sql ="update reservation set seat_status ='R', usr_id = ?"
+								+ " where seat_no=? and sch_id =?";
+							stmt = con.prepareStatement(sql); 
+							
+							stmt.setInt(1, Integer.parseInt(usrId));
+							stmt.setInt(2, Integer.parseInt(tempMap.get("seatNo").toString()));
+							stmt.setInt(3, Integer.parseInt(schId));
+							stmt.executeUpdate();
+						}
+						
+					} catch (SQLException errSql){
+						System.out.println("SQL Exception in reserveSeat:"+errSql);			
+					} catch (Exception err){
+						System.out.println("Exception in reserveSeat:"+err);
 					} finally {
 						try { 
 							if (rs != null) rs.close();

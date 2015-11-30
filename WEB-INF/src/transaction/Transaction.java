@@ -166,7 +166,7 @@ public class Transaction {
 				}
 				
 				
-				public List addTransaction(String schId,String usrId,String seatQnty){
+				public List addTransaction(String schId,String usrId,int seatQnty){
 					try{
 						
 						con = dbcon.getDbConnection() ;
@@ -175,7 +175,7 @@ public class Transaction {
 						stmt = con.prepareStatement(sql);
 						stmt.setInt(1,Integer.parseInt(usrId));
 						stmt.setInt(2,Integer.parseInt(schId));
-						stmt.setInt(3,Integer.parseInt(seatQnty));
+						stmt.setInt(3,seatQnty);
 						
 						stmt.executeUpdate();
 						

@@ -31,6 +31,8 @@ String usrId="";
 String name ="";
 String fromLocDesc="";
 String toLocDesc="";
+String seatList= "";
+int i=0;
 
 Schedule sch= new Schedule();
 User user = new User();
@@ -42,8 +44,11 @@ String temp="";
 while(reservedSeatList.hasNext()){
 	HashMap tempMap = (HashMap) reservedSeatList.next();
 	temp=temp+tempMap.get("seatNo").toString()+",";
+	i=1;
 }
-String seatList= temp.substring(0,temp.length()-1);
+if(i==1){
+	seatList = temp.substring(0,temp.length()-1);
+}
 System.out.println("SEAT LIST::::"+seatList);
 
 if(session.getAttribute("id")!=null){
