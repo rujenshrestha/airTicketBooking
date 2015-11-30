@@ -1,5 +1,5 @@
 <%@page contentType="text/html; charset=iso-8859-1" language="java" isErrorPage ="true" %>
-<jsp:include page="../include/HeaderError.jsp"/>
+<jsp:include page="/include/header.jsp"/>
 <div class="panel panel-ibx">
 <div class="panel-body">
 <div class="error-wrap">
@@ -10,4 +10,4 @@
 </div>
 </div>
 </div>
-<jsp:include page="../include/Footer.jsp" />
+<jsp:include page="/include/footer.jsp" />

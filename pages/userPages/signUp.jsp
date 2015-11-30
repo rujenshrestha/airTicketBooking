@@ -29,14 +29,14 @@ User user = new User();
 
 try{
 		user.addUser(firstName,middleName,lastName,address,phone,mobileNo,email,bnkId, accountNo,username,pwd);
-		%><jsp:forward page="../../login/login.jsp" >
+		%><jsp:forward page="/login/login.jsp" >
 			<jsp:param name="msg" value="Please log in to continue" />
 		  </jsp:forward>
 	<%
 }catch (Exception err){
 	System.out.println("Exception in signUp.jsp: "+err);
 }%>
-		<jsp:forward page="../../login/login.jsp" >
+		<jsp:forward page="/login/login.jsp" >
 			<jsp:param name="msg" value="Please log in to continue" />
 		</jsp:forward>
 

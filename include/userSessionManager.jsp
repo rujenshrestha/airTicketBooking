@@ -1,4 +1,4 @@
-<%@page contentType="text/html; charset=iso-8859-1" language="java" errorPage="../error/error.jsp" %>
+<%@page contentType="text/html; charset=iso-8859-1" language="java" errorPage="/error/error.jsp" %>
 
 <%
 String roleCd="";
@@ -7,7 +7,7 @@ String name="";
 if(session.getAttribute("roleCd") == null ||  
 session.getAttribute("disable").toString().equals("Y")) {
 %>	
-<jsp:forward page="../index.jsp" />
+<jsp:forward page="/index.jsp" />
 
 <%
 }else{
@@ -17,6 +17,6 @@ session.getAttribute("disable").toString().equals("Y")) {
 }
 %>
 
- <%if(roleCd.equals("U")){}else{ %><jsp:forward page="../index.jsp"  /><%}
+ <%if(roleCd.equals("U")){}else{ %><jsp:forward page="/index.jsp"  /><%}
  %> 
 

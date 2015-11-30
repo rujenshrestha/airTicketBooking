@@ -3,8 +3,8 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menucool ddmenu</title>
-    <link href="/airtTicketBooking/css/ddmenu.css" rel="stylesheet" type="text/css" />
-    <script src="/airtTicketBooking/js/ddmenu.js" type="text/javascript"></script>
+    <link href="/airTicketBooking/css/ddmenu.css" rel="stylesheet" type="text/css" />
+    <script src="/airTicketBooking/js/ddmenu.js" type="text/javascript"></script>
     <style>
         /*The following are for this demo page only (not required for the ddmenu).*/
         body { background: #eee url(ddmenu/ddmenu-bg.jpg) no-repeat center 0px; padding-top:90px;}

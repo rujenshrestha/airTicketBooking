@@ -13,7 +13,7 @@ String roleCd="";
 if(session.getAttribute("roleCd") == null ||  
 session.getAttribute("disable").toString().equals("Y")) {
 	%>	
-<jsp:forward page="../index.jsp" />
+<jsp:forward page="/index.jsp" />
 
 <%
 }else{
@@ -22,4 +22,4 @@ session.getAttribute("disable").toString().equals("Y")) {
 	System.out.println("role code"+roleCd);
 %>
 
-  <%if(roleCd.equals("SA") || roleCd.equals("P") || roleCd.equals("A") ){}else{ %><jsp:forward page="../index.jsp"  /><%} %> 
+  <%if(roleCd.equals("SA") || roleCd.equals("P") || roleCd.equals("A") ){}else{ %><jsp:forward page="/index.jsp"  /><%} %>

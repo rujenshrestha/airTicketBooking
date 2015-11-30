@@ -10,8 +10,8 @@
 
 <body topmargin="0" leftmargin="0" marginheight="0" marginwidth="0">
 
-<jsp:include page="../../include/header.jsp" />
- <jsp:include page="../../include/adminMenu.jsp" />
+<jsp:include page="/include/footer.jsp" />
+ <jsp:include page="/include/adminMenu.jsp" />
  
  <%
  String msg="";
@@ -114,7 +114,7 @@
   </tr>
   <tr>
     <td valign="top" bgcolor="#FFFFFF">
-	 <jsp:include page="../../include/footer.jsp" />
+	 <jsp:include page="/include/footer.jsp" />
 	</td>
   </tr>
 </table>

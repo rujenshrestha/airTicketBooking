@@ -49,7 +49,7 @@ try{
 				
 				
 				if(roleCd.matches("A")&& statusCd.matches("E")){
-					url = url+"/pages/adminPages/adminDashboard.jsp";
+					url = "/pages/adminPages/adminDashboard.jsp";
 					%>
 						<jsp:forward page="/pages/adminPages/adminDashboard.jsp" >
 							<jsp:param name="msg" value="" />
@@ -65,7 +65,7 @@ try{
 					<%
 				}else{
 					%>
-					<jsp:forward page="login.jsp" >
+					<jsp:forward page="/login/login.jsp" >
 						<jsp:param name="msg" value="Your Login has been disabled" />
 					</jsp:forward>
 					<%
@@ -74,7 +74,7 @@ try{
 				
 			}else{
 				%>
-				<jsp:forward page="login.jsp" >
+				<jsp:forward page="/login/login.jsp" >
 					<jsp:param name="msg" value="Invalid Username or Password" />
 				</jsp:forward>
 				<%
@@ -86,7 +86,7 @@ try{
 }catch (Exception err){
 	System.out.println("Exception in doLogin: "+err);
 }%>
-		<jsp:forward page="login.jsp" >
+		<jsp:forward page="/login/login.jsp" >
 			<jsp:param name="msg" value="Invalid Username or Password" />
 		</jsp:forward>
 

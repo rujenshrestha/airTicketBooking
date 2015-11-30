@@ -68,8 +68,8 @@ java.util.Iterator schDetail = sch.getScheduleDetail(schId).iterator();
 %>
 
 	<div id="main-container" class="main-container">
-	 <jsp:include page="../../include/header.jsp" />
- 		<jsp:include page="../../include/userMenu.jsp" />
+	 <jsp:include page="/include/header.jsp" />
+ 		<jsp:include page="/include/userMenu.jsp" />
 		<div class="left-side" class="left">
 
 			<form name="bookForm" action="doBookFlight.jsp?schId=<%=schId%>&usrId=<%=usrId %>" method="post">
@@ -134,7 +134,7 @@ java.util.Iterator schDetail = sch.getScheduleDetail(schId).iterator();
 
 
 		</div>
-		<jsp:include page="../../include/footer.jsp" />
+		<jsp:include page="/include/footer.jsp" />
 	</div>
 </body>
 </html>
