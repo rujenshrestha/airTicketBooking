@@ -19,7 +19,6 @@
     <script src="/airTicketBooking/js/bookingForm/citiesnDate.js"></script>
 
     <script src="/airTicketBooking/js/jquery-1.4.1.min.js" type="text/javascript"></script>
-    <script src="/airTicketBooking/js/seatManagement/seat.js" type="text/javascript"></script>
     <script src="/airTicketBooking/js/ddmenu.js" type="text/javascript"></script>
     
 
@@ -52,8 +51,8 @@ java.util.Iterator toLocList = loc.getlocationList().iterator();
 
 %>
 <div id="main-container" class="main-container">
-<jsp:include page="../../include/header.jsp" />
- <jsp:include page="../../include/userMenu.jsp" />
+<jsp:include page="/include/header.jsp" />
+ <jsp:include page="/include/userMenu.jsp" />
     <div class="left-side" class="left">
         <div id="entryInnerWrap" class="entry-inner-wrap">
             <h1>Search/Book Flights</h1>
@@ -162,7 +161,7 @@ java.util.Iterator toLocList = loc.getlocationList().iterator();
                     </div>
                     <div id="searchWrap">
                         <%--<button id="button">Search</button>--%>
-                            <input type="submit" value="search">
+                            <input type="submit" id="button" value="search">
                         <div class="clr"></div>
                     </div>
                     <div class="clr"></div>
@@ -226,7 +225,7 @@ java.util.Iterator toLocList = loc.getlocationList().iterator();
 
         </div>
 
-<jsp:include page="../../include/footer.jsp" />
+<jsp:include page="/include/footer.jsp" />
 </div>
 </body>
 </html>

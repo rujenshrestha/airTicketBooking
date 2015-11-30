@@ -484,7 +484,7 @@ ul.bottom-content-widgets .ui-tooltip-content {
 	margin: 1em 1em;
 }
 
-#airportWrap input {
+#airportWrap select {
 	width: 200px;
 	height: 2.0em;
 	margin: 0.5em 0 1.0em 0;
@@ -717,7 +717,12 @@ ul.bottom-content-widgets .ui-tooltip-content {
 }
 
 #searchWrap #button.ui-button .ui-button-text {
+
 	line-height: 1.4;
+}
+
+#searchWrap #button{
+	margin-top:8px;
 }
 
 #flightDemoFormError {

@@ -281,7 +281,7 @@ java.util.Iterator bankList = bank.getBankList().iterator();
     </script>
     
     <div valign="top" bgcolor="#FFFFFF">
-	 <jsp:include page="../include/footer.jsp" />
+	 <jsp:include page="/include/footer.jsp" />
 	</div>
   </tr>
 </body>
