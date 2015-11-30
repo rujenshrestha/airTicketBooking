@@ -1,5 +1,5 @@
-/* 
-General Styles 
+/*
+General Styles
  Nikesh Niroula
    License: none (public domain)
 
@@ -82,6 +82,7 @@ s, .strike {
     height: 600px;
     display: block;
     margin: 0 auto;
+
 }
 
 .left-side {
@@ -89,6 +90,7 @@ s, .strike {
     width: 613px;
     height: 600px;
     position: relative;
+    padding: 20px;
 }
 
 .right-side {
@@ -98,7 +100,6 @@ s, .strike {
     position: relative;
 
 }
-
 /* Base Layout */
 .entry-content-outer-wrap {
     width: 100%;
@@ -147,7 +148,7 @@ s, .strike {
 .entry-inner-wrap {
     width: 100%;
     height: auto;
-    padding: 0 1% 1% 1%;
+    padding: 0;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -653,7 +654,7 @@ ul.bottom-content-widgets .ui-tooltip-content {
 
 #searchWrap #button {
     float: left;
-    width: 50%;
+    width: 70%;
     height: 2.2em;
     text-shadow: 1px 1px 1px #f1f1f1;
     border: 1px solid #abadb3;
@@ -797,42 +798,3 @@ ul.bottom-content-widgets .ui-tooltip-content {
     float: left;
 }
 
-/*Css for bookingForm.jsp*/
-
-.left-side form {
-
-    padding: 30px 100px 20px 40px;
-}
-
-.left-side label {
-
-    display: block;
-    height: 40px;
-    font-weight: bold;
-    font-size:16px ;
-}
-
-.left-side input {
-    float: right;
-    border: none;
-    background: none;
-}
-
-
-#bookFlight:hover {
-    color: #ec8e0c;
-    text-shadow: 1px 1px 1px #ffec8b;
-    border: 1px solid #f7b850;
-    background: #fdf5ce url("ui-lightness/images/ui-bg_highlight-soft_75_ffe45c_1x100.png") 50% 50% repeat-x;
-}
-
-#bookFlight {
-    height: 26px;
-    border: 2px solid #00BCD4;
-    background: azure;
-}
-
-.right-side form {
-
-    padding: 30px 0px;
-}

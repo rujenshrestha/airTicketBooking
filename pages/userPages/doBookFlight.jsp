@@ -24,7 +24,7 @@ while(i<seatList.length()){
 	
 	HashMap resultMap = new HashMap();
 	seatNo="";
-	
+	System.out.println(seatList+"no seat coming");
 	while(seatList.charAt(i)!= ',' ){
 		seatNo = seatNo+seatList.charAt(i);
 		i++;

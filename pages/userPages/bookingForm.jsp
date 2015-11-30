@@ -9,15 +9,11 @@
 <meta charset="utf-8">
 <title>jQuery UI Composite Demo - Flight Booking</title>
 <link href="/airTicketBooking/css/bookingForm/reset.css" rel="stylesheet">
-<link
-	href="/airTicketBooking/css/bookingForm/ui-lightness/jquery-ui-1.9.0.custom.css"
-	rel="stylesheet">
 <link href="/airTicketBooking/css/bookingForm/style.css" rel="stylesheet">
 <link href="/airTicketBooking/css/ddmenu.css" rel="stylesheet" type="text/css" />
 <script src="/airTicketBooking/js/bookingForm/jquery-1.8.2.min.js"></script>
 <script src="/airTicketBooking/js/bookingForm/jquery-ui-1.9.0.custom.min.js"></script>
 <script src="/airTicketBooking/js/bookingForm/cssMakeup.js"></script>
-<script src="/airTicketBooking/js/bookingForm/citiesnDate.js"></script>
 
 <script src="/airTicketBooking/js/jquery-1.4.1.min.js" type="text/javascript"></script>
 <script src="/airTicketBooking/js/seatManagement/seat.js" type="text/javascript"></script>
@@ -76,23 +72,24 @@ java.util.Iterator schDetail = sch.getScheduleDetail(schId).iterator();
 			<%
 				while(schDetail.hasNext()){
 					HashMap tempMap = (HashMap) schDetail.next();
+
 					fromLocDesc= loc.getlocationDesc(tempMap.get("fromLocId").toString());
 					toLocDesc= loc.getlocationDesc(tempMap.get("toLocId").toString());
 			%>
-				<label>Name : <%=name%></label>
-				<br>
-				<label>Departure from : <%=fromLocDesc%></label>
-				<br>
-				<label>Going to : <%=toLocDesc%></label>
-				<br>
-				<label>Flight Date : <%=tempMap.get("flightDate")%></label>
-				<br>
-				<label>Flight Time: <%=tempMap.get("flightTime")%></label>
-				<br>
+				<label>Name :<input type="text" value="<%=name%>" readonly> </label>
+
+				<label>Departure from :<input type="text" value="<%=fromLocDesc%>" readonly> </label>
+
+				<label>Going to :<input type="text" value="<%=toLocDesc%>" readonly> </label>
+
+				<label>Flight Date :<input type="text" value="<%=tempMap.get("flightDate")%>" readonly> </label>
+
+				<label>Flight Time: <input type="text" value="<%=tempMap.get("flightTime")%>" readonly></label>
+
 				<%} %>
-				<label>Selected Seat: </label><input type="text" id="selectedSeat" name="selectedSeat" readonly>
-				<br>
-				<input type="submit" value="book">
+				<label>Selected Seat: <input type="text" id="selectedSeat" name="selectedSeat" readonly required></label>
+
+				<input id="bookFlight" type="submit" value="book">
 			</form>
 
 
