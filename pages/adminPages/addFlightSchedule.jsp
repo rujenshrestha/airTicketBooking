@@ -137,7 +137,7 @@ java.util.Iterator toLocList = toLoc.getlocationList().iterator();
                                     <td>Time </td>
                                     <td>
                                         <input type="text" id="timeAF" name="timeAF" placeholder="hh:mm" maxlength="5" required />
-                                        <select>
+                                        <select name="AMPM">
                                             <option value="AM">AM</option>
                                             <option value="PM">PM</option>
                                         </select>

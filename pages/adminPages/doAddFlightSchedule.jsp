@@ -13,10 +13,14 @@ String alnId = request.getParameter("alnId").toString();
 String fromLocId = request.getParameter("fromLocId").toString();
 String toLocId = request.getParameter("toLocId").toString();
 String price = request.getParameter("price").toString();
-String time = request.getParameter("time").toString();
-String date = request.getParameter("date").toString();
+String time = request.getParameter("timeAF").toString();
+String ampm = request.getParameter("AMPM").toString();
+time = time+ampm;
+String date = request.getParameter("dateAF").toString();
 String flightClass = request.getParameter("class").toString();
 String seatQnty = request.getParameter("seatQnty").toString();
+
+System.out.println("time: "+time+"  date: "+date);
 
 Schedule sch = new Schedule();
 
