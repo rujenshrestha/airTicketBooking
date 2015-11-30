@@ -35,7 +35,7 @@
 							<span class="icon-bar"></span>
 						</button>
 						<a class="navbar-brand padding-top padding-left" href="#">
-							<img src="/airTicketBooking/images/header.jpg" width="100%">
+							<img src="/airTicketBooking/images/header.jpeg" width="40" height="40">
 						</a>
 					</div>
 					<div class="collapse navbar-collapse" id="myNavbar">
