@@ -104,7 +104,7 @@ public class Admin{
 	}
 	
 	public void updateAdminDetail(String admId,String fullName,String address,String phone,
-								  String mobileNo,String emailId){
+								  String mobileNo,String emailId,String username,String password){
 		try{
 			
 			con = dbcon.getDbConnection() ;
@@ -115,9 +115,17 @@ public class Admin{
 			stmt.setString(1,fullName);
 			stmt.setString(2,address);
 			stmt.setInt(3,Integer.parseInt(phone));
-			stmt.setInt(4,Integer.parseInt(mobileNo));
+			stmt.setLong(4,Long.parseLong(mobileNo));
 			stmt.setString(5,emailId);
 			stmt.setInt(6, Integer.parseInt(admId));
+			stmt.executeUpdate();
+			
+			sql="update authentication set username=?, pwd=? where id =? and role_cd ='A'";
+			stmt =con.prepareStatement(sql);
+			stmt.setString(1,username);
+			stmt.setString(2,password);
+			stmt.setInt(3,Integer.parseInt(admId));
+			
 			stmt.executeUpdate();
 			
 		} catch (SQLException errSql){

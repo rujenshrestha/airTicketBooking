@@ -10,7 +10,7 @@
 </head>
 
 <body topmargin="0" leftmargin="0" marginheight="0" marginwidth="0">
-<jsp:include page="/include/footer.jsp" />
+
  <jsp:include page="/include/adminMenu.jsp" />
 	  
 <%
@@ -74,7 +74,7 @@ if(session.getAttribute("id")!=null){
 					  <table width="100%" border="0" align="center" cellpadding="2" cellspacing="1" bgcolor="#373948">
                           <tr align="center" bgcolor="#FAFAFA">
                             <td width="14%">
-							 <form name="f1"action="doEditAdmin.jsp" method="post">
+							 <form name="f1"action="doEditAdmin.jsp?admId=<%=admId%>" method="post">
 							    <table width="100%"  border="0" cellpadding="2" cellspacing="0" bgcolor="#ECE9D8">
         							<%
         								while(adminDetail.hasNext()){
@@ -94,7 +94,7 @@ if(session.getAttribute("id")!=null){
                                     <td width="2%">&nbsp;</td>
                                     <td width="22%">&nbsp;</td>
                                     <td width="15%">Full Name </td>
-                                    <td width="58%"><input type="text" name="fullname" value="<%=fullName%>" maxlength="50" required></td>
+                                    <td width="58%"><input type="text" name="fullname" value="<%=fullName%>" maxlength="50" readonly></td>
                                     <td width="16%">&nbsp;</td>
                                   </tr>
                                   <tr bgcolor="#FFFFFF">
@@ -158,7 +158,7 @@ if(session.getAttribute("id")!=null){
           </table></td>
         </tr>
       </table></td>
-	  
+	<jsp:include page="/include/footer.jsp" />  
   </tr>
   <tr>
     <td valign="top" bgcolor="#FFFFFF">
