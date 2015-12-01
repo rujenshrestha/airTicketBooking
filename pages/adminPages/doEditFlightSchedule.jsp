@@ -1,4 +1,5 @@
 <%@page contentType="text/html; charset=iso-8859-1" language="java" import="java.sql.*,java.util.*" errorPage="" %>
+<jsp:include page="/include/adminSessionManager.jsp" />
 <%@ page import="schedule.Schedule"%>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">

@@ -1,4 +1,5 @@
 <%@page contentType="text/html; charset=iso-8859-1" language="java" import="admin.Admin,java.util.HashMap" errorPage="" %>
+<jsp:include page="/include/adminSessionManager.jsp" />
 <html>
 <head>
 

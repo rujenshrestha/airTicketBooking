@@ -1,4 +1,5 @@
 <%@page contentType="text/html; charset=iso-8859-1" language="java" import="java.sql.*,java.util.*" errorPage="" %>
+<jsp:include page="/include/adminSessionManager.jsp" />
 <%@page import="user.User" %>
 <%@page import="bank.Bank" %>
 <html>

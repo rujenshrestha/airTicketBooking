@@ -1,4 +1,5 @@
 <%@page contentType="text/html; charset=iso-8859-1" language="java" import="airline.Airline,java.util.HashMap" errorPage="" %>
+<jsp:include page="/include/adminSessionManager.jsp" />
 <html>
 <head>
 
