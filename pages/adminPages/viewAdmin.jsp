@@ -10,7 +10,7 @@
 
 <body topmargin="0" leftmargin="0" marginheight="0" marginwidth="0">
 
-<jsp:include page="/include/footer.jsp" />
+
  <jsp:include page="/include/adminMenu.jsp" />
  
  <%

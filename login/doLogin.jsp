@@ -40,6 +40,7 @@ try{
 				session.setAttribute("id",logId);
 				session.setAttribute("roleCd",roleCd);
 				session.setAttribute("athId",athId);
+				session.setAttribute("statusCd",statusCd);
 				
 				System.out.println("Session Id:: "+session.getAttribute("id"));
 				System.out.println("Session Role:: "+session.getAttribute("roleCd"));
