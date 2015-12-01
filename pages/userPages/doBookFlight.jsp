@@ -1,4 +1,5 @@
 <%@page contentType="text/html; charset=iso-8859-1" language="java" errorPage="" %>
+<jsp:include page="/include/userSessionManager.jsp" />
 <%@page import="reservation.Reservation" %>
 <%@page import="transaction.Transaction" %>
 <%@page import="java.util.*" %>

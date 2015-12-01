@@ -1,5 +1,5 @@
 <%@page contentType="text/html; charset=iso-8859-1" language="java" errorPage="" %>
-
+<jsp:include page="/include/userSessionManager.jsp" />
 <!doctype html>
 <%@page import="location.Location" %>
 <%@page import="java.util.* " %>

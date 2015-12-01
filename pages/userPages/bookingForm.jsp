@@ -1,4 +1,5 @@
 <!doctype html>
+<jsp:include page="/include/userSessionManager.jsp" />
 <%@page import="schedule.Schedule" %>
 <%@page import="location.Location" %>
 <%@page import="user.User" %>
