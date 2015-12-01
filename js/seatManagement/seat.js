@@ -67,16 +67,18 @@ $(document).ready(function() {
 					//Case II: If already booked
 					var bookedSeats = [];
 					var bookedSeatSpanObj = document.getElementById("bookedSeatSpan");
+					console.log(bookedSeatSpanObj);
 
-					if(bookedSeatSpan != null) {
+					if(bookedSeatSpanObj != null) {
 						var bookedSeatSpan = bookedSeatSpanObj.innerHTML;
 						var seatNo = bookedSeatSpan.split(",");
+						console.log(bookedSeatSpan);
 
 						var a = 1;
 						for (var i = 0; i < seatNo.length; i++) {
 							bookedSeats[i] = parseInt(seatNo[i]);
-							//console.log(a+a);
-							//console.log(parseInt(seatNo[i])+parseInt(seatNo[i]))
+							console.log(a+a);
+							console.log(parseInt(seatNo[i])+parseInt(seatNo[i]))
 						}
 
 

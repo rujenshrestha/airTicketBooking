@@ -46,6 +46,7 @@ while(reservedSeatList.hasNext()){
 if(i==1){
 	seatList = temp.substring(0,temp.length()-1);
 }
+	//seatList = "1,2,3";
 System.out.println("SEAT LIST::::"+seatList);
 
 if(session.getAttribute("id")!=null){
