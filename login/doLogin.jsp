@@ -41,6 +41,7 @@ try{
 				session.setAttribute("roleCd",roleCd);
 				session.setAttribute("athId",athId);
 				session.setAttribute("statusCd",statusCd);
+				session.setMaxInactiveInterval(300);
 				
 				System.out.println("Session Id:: "+session.getAttribute("id"));
 				System.out.println("Session Role:: "+session.getAttribute("roleCd"));
