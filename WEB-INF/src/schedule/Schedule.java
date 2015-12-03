@@ -269,6 +269,35 @@ public class Schedule {
 					
 				}
 				
+				public String getAirlineDescBySchedule(String schId){
+					String airlineDesc="";
+					try{
+						
+						con = dbcon.getDbConnection() ;
+						sql ="SELECT airline_desc FROM airline a,flight_schedule b WHERE "
+							+ "a.aln_id = b.aln_id AND b.sch_id = ?";
+						stmt = con.prepareStatement(sql); 
+						
+						stmt.setInt(1, Integer.parseInt(schId));
+						rs = stmt.executeQuery();
+						while(rs.next()){
+							airlineDesc = rs.getString("airline_desc");
+						}
+					
+					} catch (SQLException errSql){
+						System.out.println("SQL Exception in getAirlineDescBySchedule:"+errSql);			
+					} catch (Exception err){
+						System.out.println("Exception in getAirlineDescBySchedule:"+err);
+					} finally {
+						try { 
+								if (rs != null) rs.close();
+								if (stmt != null) stmt.close();
+								if (con != null) con.close();
+						} catch (SQLException errSql){}
+					}
+					return airlineDesc;
+				}
+				
 				
 				
 			 }

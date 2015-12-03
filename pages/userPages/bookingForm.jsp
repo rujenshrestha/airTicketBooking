@@ -43,12 +43,15 @@ String name ="";
 String fromLocDesc="";
 String toLocDesc="";
 String seatList= "";
+String airlineDesc="";
 int i=0;
 
 Schedule sch= new Schedule();
 User user = new User();
 Location loc = new Location();
 Reservation res = new Reservation();
+
+airlineDesc= sch.getAirlineDescBySchedule(schId);
  
 java.util.Iterator reservedSeatList = res.getReservedSeat(schId).iterator();
 String temp="";
@@ -80,7 +83,6 @@ java.util.Iterator schDetail = sch.getScheduleDetail(schId).iterator();
 %>
 
 	<div id="main-container" class="main-container">
-	 <jsp:include page="/include/header.jsp" />
  		<jsp:include page="/include/userMenu.jsp" />
 		<div class="left-side" class="left">
 
@@ -93,6 +95,8 @@ java.util.Iterator schDetail = sch.getScheduleDetail(schId).iterator();
 					toLocDesc= loc.getlocationDesc(tempMap.get("toLocId").toString());
 			%>
 				<label>Name :<input type="text" value="<%=name%>" readonly> </label>
+				
+				<label>Airline :<input type="text" value="<%=airlineDesc%>" readonly> </label>
 
 				<label>Departure from :<input type="text" value="<%=fromLocDesc%>" readonly> </label>
 
