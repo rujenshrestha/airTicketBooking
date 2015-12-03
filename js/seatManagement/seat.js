@@ -67,7 +67,6 @@ $(document).ready(function() {
 					//Case II: If already booked
 					var bookedSeats = [];
 					var bookedSeatSpanObj = document.getElementById("bookedSeatSpan");
-					console.log(bookedSeatSpanObj);
 
 					if(bookedSeatSpanObj != null) {
 						var bookedSeatSpan = bookedSeatSpanObj.innerHTML;

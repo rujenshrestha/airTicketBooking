@@ -20,6 +20,20 @@
 <script src="/airTicketBooking/js/seatManagement/seat.js" type="text/javascript"></script>
 <script src="/airTicketBooking/js/ddmenu.js" type="text/javascript"></script>
 
+	<script>
+		$(document).ready(function(){
+			$("#bookForm").submit(function(){
+
+				if($("#selectedSeat").val()!=""){
+					return true
+				}else{
+                    $("#selectedSeat").attr("placeholder", "Please select seat.!!!!!!!!!!");
+                    return false
+				}
+			});
+		});
+	</script>
+
 </head>
 <body>
 <% 
@@ -70,7 +84,7 @@ java.util.Iterator schDetail = sch.getScheduleDetail(schId).iterator();
  		<jsp:include page="/include/userMenu.jsp" />
 		<div class="left-side" class="left">
 
-			<form name="bookForm" action="doBookFlight.jsp?schId=<%=schId%>&usrId=<%=usrId %>" method="post">
+			<form name="bookForm" id="bookForm" action="doBookFlight.jsp?schId=<%=schId%>&usrId=<%=usrId %>" method="post">
 			<%
 				while(schDetail.hasNext()){
 					HashMap tempMap = (HashMap) schDetail.next();

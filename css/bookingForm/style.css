@@ -76,6 +76,14 @@ s, .strike {
     height: 0px;
 }
 
+::-webkit-input-placeholder { /* WebKit browsers */
+    color:    #888;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color:    #888;
+    opacity:  1;
+}
+
 /*Box design*/
 .main-container {
     width: 1348px;
