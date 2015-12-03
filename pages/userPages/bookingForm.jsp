@@ -85,7 +85,7 @@ java.util.Iterator schDetail = sch.getScheduleDetail(schId).iterator();
 	<div id="main-container" class="main-container">
  		<jsp:include page="/include/userMenu.jsp" />
 		<div class="left-side" class="left">
-
+  
 			<form name="bookForm" id="bookForm" action="doBookFlight.jsp?schId=<%=schId%>&usrId=<%=usrId %>" method="post">
 			<%
 				while(schDetail.hasNext()){

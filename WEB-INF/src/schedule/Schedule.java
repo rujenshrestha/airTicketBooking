@@ -260,7 +260,7 @@ public class Schedule {
 					} catch (Exception err){
 						System.out.println("Exception in deleteSchedule:"+err);
 					} finally {
-						try { 
+						try {   
 								if (rs != null) rs.close();
 								if (stmt != null) stmt.close();
 								if (con != null) con.close();
