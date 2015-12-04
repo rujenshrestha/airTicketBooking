@@ -10,6 +10,7 @@
 </head>
 
 <body style="topmargin:0px auto;padding:0px;spacing:0px"> 
+
  <jsp:include page="/include/header.jsp" />
  <jsp:include page="/include/adminMenu.jsp" />
 	  
@@ -25,6 +26,6 @@ if(request.getParameter("msg")!=null){
 	                          	<%} %>
                            </font> 
                           
-                   
+<div style="position:fixed;bottom:0;width:100%"><jsp:include page="/include/footer.jsp" /></div>               
 </body>
 </html>

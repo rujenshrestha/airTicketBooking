@@ -23,7 +23,7 @@ String bankDesc = request.getParameter("bankDesc").toString();
 
 
 %>	  
-	  <table width="100%" height="100%"  border="0" cellpadding="0" cellspacing="0">
+	  <table width="100%" height="73%"  border="0" cellpadding="0" cellspacing="0">
         <tr>
           <td height="100%" valign="top"><table width="100%"  border="0" cellspacing="0" cellpadding="8">
               <tr>
@@ -87,13 +87,7 @@ String bankDesc = request.getParameter("bankDesc").toString();
               </tr>
           </table></td>
         </tr>
-      </table></td>
-	  
-  </tr>
-  <tr>
-    <td valign="top" bgcolor="#FFFFFF">
-	</td>
-  </tr>
-</table>
+      </table>
+      <jsp:include page="/include/footer.jsp" />
 </body>
 </html>

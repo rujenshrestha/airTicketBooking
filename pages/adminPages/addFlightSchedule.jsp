@@ -43,7 +43,7 @@ java.util.Iterator fromLocList = fromLoc.getlocationList().iterator();
 java.util.Iterator toLocList = toLoc.getlocationList().iterator();
 
 %>	  
-	  <table width="100%" height="100%"  border="0" cellpadding="0" cellspacing="0">
+	  <table width="100%" height="73%"  border="0" cellpadding="0" cellspacing="0">
         <tr>
           <td height="100%" valign="top"><table width="100%"  border="0" cellspacing="0" cellpadding="8">
               <tr>
@@ -197,17 +197,7 @@ java.util.Iterator toLocList = toLoc.getlocationList().iterator();
               
           </table></td>
         </tr>
-      </table></td>
-	  
-  </tr>
-  <tr>
-     <td valign="top" bgcolor="#FFFFFF">
-    	<jsp:include page="/include/footer.jsp" />
-	 </td>
-</tr>
-  <tr>
-   
-  </tr>
-</table>
+      </table>
+      <jsp:include page="/include/footer.jsp" />
 </body>
 </html>

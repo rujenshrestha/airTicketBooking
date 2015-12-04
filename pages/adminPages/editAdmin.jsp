@@ -39,7 +39,7 @@ if(session.getAttribute("id")!=null){
 		java.util.Iterator adminDetail = admin.getAdminDetail(admId).iterator();
 %>
 			  
-	  <table width="100%" height="100%"  border="0" cellpadding="0" cellspacing="0">
+	  <table width="100%" height="73%"  border="0" cellpadding="0" cellspacing="0">
         <tr>
           <td height="100%" valign="top"><table width="100%"  border="0" cellspacing="0" cellpadding="8">
               <tr>
@@ -157,13 +157,7 @@ if(session.getAttribute("id")!=null){
               </tr>
           </table></td>
         </tr>
-      </table></td>
-	<jsp:include page="/include/footer.jsp" />  
-  </tr>
-  <tr>
-    <td valign="top" bgcolor="#FFFFFF">
-	</td>
-  </tr>
-</table>
+      </table>
+      <jsp:include page="/include/footer.jsp" />
 </body>
 </html>

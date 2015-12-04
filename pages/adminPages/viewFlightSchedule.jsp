@@ -34,7 +34,7 @@
  java.util.Iterator schList = sch.getScheduleList().iterator();
  %>
  
-      <table width="100%" height="86%"  border="0" cellpadding="0" cellspacing="0">
+      <table width="100%" height="73%"  border="0" cellpadding="0" cellspacing="0">
         <tr>
           <td height="100%" valign="top" bgcolor="#FFFFFF">
           <table width="100%"  border="0" cellspacing="0" cellpadding="8">
