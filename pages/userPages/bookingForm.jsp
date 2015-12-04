@@ -35,7 +35,7 @@
 	</script>
 
 </head>
-<body>
+<body style="topmargin:0px auto;padding:0px;spacing:0px">
 <% 
 String schId= request.getParameter("schId").toString();
 String usrId="";
@@ -83,6 +83,7 @@ java.util.Iterator schDetail = sch.getScheduleDetail(schId).iterator();
 %>
 
 	<div id="main-container" class="main-container">
+	<jsp:include page="/include/header.jsp" />
  		<jsp:include page="/include/userMenu.jsp" />
 		<div class="left-side" class="left">
     
@@ -151,7 +152,7 @@ java.util.Iterator schDetail = sch.getScheduleDetail(schId).iterator();
 
 
 		</div>
-		<jsp:include page="/include/footer.jsp" />
+		<div style="position:fixed;bottom:0;width:100%"><jsp:include page="/include/footer.jsp" /></div>
 	</div>
 </body>
 </html>

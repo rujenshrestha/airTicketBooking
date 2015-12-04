@@ -24,7 +24,7 @@
     
 
 </head>
-<body>
+<body style="topmargin:0px auto;padding:0px;spacing:0px">
 <%
 
 String fromLocId = request.getParameter("flightFrom").toString();
@@ -224,7 +224,7 @@ java.util.Iterator toLocList = loc.getlocationList().iterator();
 
         </div>
 
-<jsp:include page="/include/footer.jsp" />
+<div style="position:fixed;bottom:0;width:100%"><jsp:include page="/include/footer.jsp" /></div>
 </div>
 </body>
 </html>
