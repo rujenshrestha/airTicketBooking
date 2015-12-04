@@ -8,8 +8,15 @@ scrollbar-shadow-color:#E8E3DF;
 scrollbar-arrow-color:#9F0A0E;
 scrollbar-base-color:#DDDDDD;
 scrollbar-face-color:#DDDDDD;
-scrollbar-scroll:no
-font-family: Verdana, Arial, Helvetica, sans-serif; color: "#000000"; font-size: 12px; topmargin="0" ;leftmargin="0"; marginheight="0" ;marginwidth="0" ;background-color: #FAFAFA}
+scrollbar-scroll:no;
+margin:0px auto;
+topmargin:0px auto;
+padding:0px;
+spacing:0px;
+font-family: Verdana, Arial, Helvetica, sans-serif; color: "#000000"; font-size: 12px;
+topmargin="0" ;leftmargin="0"; marginheight="0" ;marginwidth="0" ;background-color: #FAFAFA
+
+}
 td { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 12px}
 
 

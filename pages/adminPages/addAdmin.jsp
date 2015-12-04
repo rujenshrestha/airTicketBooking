@@ -9,7 +9,7 @@
     <script src="/airTicketBooking/js/ddmenu.js" type="text/javascript"></script>
 </head>
 
-<body topmargin="0" leftmargin="0" marginheight="0" marginwidth="0"> 
+<body style="topmargin:0px auto;padding:0px;spacing:0px">
  <jsp:include page="/include/header.jsp" />
  <jsp:include page="/include/adminMenu.jsp" />
 	  
@@ -20,7 +20,7 @@ if(request.getParameter("msg")!=null){
 }
 
 %>	  
-	  <table width="100%" height="100%"  border="0" cellpadding="0" cellspacing="0">
+	  <table width="100%" height="86%"  border="0" cellpadding="0" cellspacing="0">
         <tr>
           <td height="100%" valign="top"><table width="100%"  border="0" cellspacing="0" cellpadding="8">
               <tr>
@@ -113,6 +113,7 @@ if(request.getParameter("msg")!=null){
                               <td>&nbsp; </td>
                                     <td><input type="submit" name="Submit" value="Submit">
                                 <input type="reset" name="reset" value="Reset"></td>
+                                <td>&nbsp; </td>
                                   </tr>
                                 </table>
 							  </form>
@@ -125,17 +126,8 @@ if(request.getParameter("msg")!=null){
               
           </table></td>
         </tr>
-      </table></td>
-	  
-  </tr>
-  <tr>
-     <td valign="top" bgcolor="#FFFFFF">
+      </table>
     	<jsp:include page="/include/footer.jsp" />
-	 </td>
-</tr>
-  <tr>
-   
-  </tr>
-</table>
+	
 </body>
 </html>

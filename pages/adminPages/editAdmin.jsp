@@ -9,8 +9,8 @@
     <script src="/airTicketBooking/js/ddmenu.js" type="text/javascript"></script>
 </head>
 
-<body topmargin="0" leftmargin="0" marginheight="0" marginwidth="0">
-
+<body style="topmargin:0px auto;padding:0px;spacing:0px">
+<jsp:include page="/include/header.jsp"/>
  <jsp:include page="/include/adminMenu.jsp" />
 	  
 <%

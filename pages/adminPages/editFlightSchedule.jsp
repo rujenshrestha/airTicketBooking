@@ -12,8 +12,8 @@
     <script src="/airTicketBooking/js/bookingForm/citiesnDate.js"></script>
 </head>
 
-<body topmargin="0" leftmargin="0" marginheight="0" marginwidth="0">
-<jsp:include page="/include/footer.jsp" />
+<body style="topmargin:0px auto;padding:0px;spacing:0px">
+<jsp:include page="/include/header.jsp" />
  <jsp:include page="/include/adminMenu.jsp" />
 	  
 <%
