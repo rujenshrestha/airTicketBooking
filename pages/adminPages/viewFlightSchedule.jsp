@@ -1,6 +1,7 @@
 <%@page contentType="text/html; charset=iso-8859-1" language="java" import="java.sql.*,java.util.*" errorPage="" %>
 <jsp:include page="/include/adminSessionManager.jsp" />
 <%@ page import="schedule.Schedule"%>
+<%@ page import="reservation.Reservation"%>
 <%@ page import="airline.Airline"%>
 <%@ page import="location.Location"%>
 <html>
@@ -30,6 +31,7 @@
  Schedule sch = new Schedule();
  Airline air = new Airline();
  Location loc=new Location();
+ Reservation res = new Reservation();
  
  java.util.Iterator schList = sch.getScheduleList().iterator();
  %>
@@ -116,7 +118,13 @@
                                     <td><%=tempMap.get("class")%></td>
                                     <td><%=tempMap.get("seatQnty")%></td>
                                     <td>
-                                        <a href="doStartReservation.jsp?schId=<%=tempMap.get("schId")%>&seatQnty=<%=tempMap.get("seatQnty") %>" title="RESERVE">RESERVE</a>
+                                    <%
+                                    	java.util.Iterator resDetail = res.getSeatStatus(tempMap.get("schId").toString()).iterator();
+                                    	if(resDetail.hasNext()){%>
+                                    		&nbsp;
+                                    	<%}else{ %>
+                                        	<a href="doStartReservation.jsp?schId=<%=tempMap.get("schId")%>&seatQnty=<%=tempMap.get("seatQnty") %>">INITIATE BOOKING</a>
+                                    	<%}%>
                                     </td>
                                     <td>
                                         <a href="editFlightSchedule.jsp?schId=<%=tempMap.get("schId")%>" title="EDIT"><img src="../../images/action/edit.png" border="0"></a>
