@@ -139,37 +139,37 @@ java.util.Iterator bankList = bank.getBankList().iterator();
 								</form>
 								<form id="register-form" action="/airTicketBooking/pages/userPages/signUp.jsp" method="post" role="form" style="display: none;">
 								<div class="form-group">
-										<input type="text" name="fname" id="fname" tabindex="1" class="form-control" placeholder="First Name" value="">
+										<input type="text" name="fname" id="fname" tabindex="1" class="form-control" placeholder="First Name" value="" required>
 								</div>
 								<div class="form-group">		
-										<input type="text" name="mname" id="mname" tabindex="1" class="form-control" placeholder="Middle Name (optional)" value="">
+										<input type="text" name="mname" id="mname" tabindex="2" class="form-control" placeholder="Middle Name (optional)" value="">
 								</div>
 								<div class="form-group">		
-										<input type="text" name="lname" id="lname" tabindex="1" class="form-control" placeholder="Last Name" value="">
+										<input type="text" name="lname" id="lname" tabindex="3" class="form-control" placeholder="Last Name" value="" required>
 									</div>
 									<div class="form-group">
-										<input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Username" value="">
+										<input type="text" name="username" id="username" tabindex="4" class="form-control" placeholder="Username" value="" required>
 									</div>									
 									<div class="form-group">
-										<input type="password" name="pwd" id="password" tabindex="2" class="form-control" placeholder="Password">
+										<input type="password" name="pwd" id="password" tabindex="5" class="form-control" placeholder="Password" required>
 									</div>
 									<div class="form-group">
-										<input type="password" name="confirmPwd" id="confirm-password" tabindex="2" class="form-control" placeholder="Confirm Password">
+										<input type="password" name="confirmPwd" id="confirm-password" tabindex="6" class="form-control" placeholder="Confirm Password" required>
 									</div>
 									<div class="form-group">
-										<input type="text" name="address" id="address" tabindex="1" class="form-control" placeholder="Address" value="">
+										<input type="text" name="address" id="address" tabindex="7" class="form-control" placeholder="Address" value="" required>
 									</div>
 									<div class="form-group">
-										<input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Email Address" value="">
+										<input type="email" name="email" id="email" tabindex="8" class="form-control" placeholder="Email Address" value="" required>
 									</div>
 									<div class="form-group">
-										<input type="text" name="mobileNo" id="address" tabindex="1" class="form-control" placeholder="Mobile No." value="">
+										<input type="text" name="mobileNo" id="address" tabindex="9" class="form-control" placeholder="Mobile No." value="" required>
 									</div>
 									<div class="form-group">
-										<input type="text" name="phone" id="phone" tabindex="1" class="form-control" placeholder="Contact No." value="">
+										<input type="text" name="phone" id="phone" tabindex="10" class="form-control" placeholder="Contact No." value="" required>
 									</div>
 									<div class="form-group">
-				                            <select class="form-control" id="bank" name="bnkId">
+				                            <select class="form-control" tabindex="11" id="bank" name="bnkId" required>
 				                            <option value="A">--Select Bank--</option>
 				                              <%while(bankList.hasNext()){ 
 				                              	HashMap tempMap = (HashMap) bankList.next();
@@ -179,13 +179,13 @@ java.util.Iterator bankList = bank.getBankList().iterator();
 				                            </select>
                    					</div>
                    					<div class="form-group">
-										<input type="text" name="accountNo" id="account" tabindex="1" class="form-control" placeholder="Account No." value="">
+										<input type="text" name="accountNo" id="account" tabindex="12" class="form-control" placeholder="Account No." value="" required>
 									</div>
 									
 									<div class="form-group">
 										<div class="row">
 											<div class="col-sm-6 col-sm-offset-3">
-												<input type="submit" name="register-submit" id="register-submit" tabindex="4" class="form-control btn btn-register" value="Get Started">
+												<input type="submit" name="register-submit" id="register-submit" tabindex="13" class="form-control btn btn-register" value="Get Started">
 											</div>
 										</div>
 									</div>

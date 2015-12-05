@@ -36,7 +36,8 @@
 
 </head>
 <body style="topmargin:0px auto;padding:0px;spacing:0px">
-<% 
+<%
+	System.out.println("Inside bookingForm.jsp");
 String schId= request.getParameter("schId").toString();
 String usrId="";
 String name ="";

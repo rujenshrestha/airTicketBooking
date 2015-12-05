@@ -23,6 +23,25 @@
     
     <script src="/airTicketBooking/js/ddmenu.js" type="text/javascript"></script>
 
+    <script>
+        $(document).ready(function(){
+            $("Form").submit(function(){
+                var html = "<span id='error' style='color:red'>From and To can not be same</span>";
+                if($("#flightFrom").val()==$("#flightTo").val()){
+                    if( $("#error") != undefined){
+                        $("#error").remove()
+                    }
+
+                    $("#flightTo").after(html);
+                    return false
+                }else{
+
+                    return true
+                }
+            });
+        });
+    </script>
+
 </head>
 <body style="topmargin:0px auto;padding:0px;spacing:0px">
 
@@ -179,22 +198,22 @@ java.util.Iterator toLocList = loc.getlocationList().iterator();
                 </form>
                 <!--/#flightDemo-->
                 <div class="clr"></div>
-                <div id="flightDemoLoading">
-                    <img
-                            src="/airTicketBooking/css/bookingForm/ui-lightness/images/ajax-loader.gif"
-                            alt="Loading..."/>
+                <%--<div id="flightDemoLoading" style="display: none">--%>
+                    <%--<img--%>
+                            <%--src="/airTicketBooking/css/bookingForm/ui-lightness/images/ajax-loader.gif"--%>
+                            <%--alt="Loading..."/>--%>
 
-                    <div class="clr"></div>
-                </div>
+                    <%--<div class="clr"></div>--%>
+                <%--</div>--%>
                 <div class="clr"></div>
-                <div id="flightDemoComplete">
-                    <h2>You Selected The Following:</h2>
-                    <ul></ul>
-                    <div class="clr"></div>
-                    <a id="flightDemoBack">&laquo; Back To Form</a>
+                <%--<div id="flightDemoComplete" style="display: none">--%>
+                    <%--<h2>You Selected The Following:</h2>--%>
+                    <%--<ul></ul>--%>
+                    <%--<div class="clr"></div>--%>
+                    <%--<a id="flightDemoBack">&laquo; Back To Form</a>--%>
 
-                    <div class="clr"></div>
-                </div>
+                    <%--<div class="clr"></div>--%>
+                <%--</div>--%>
                 <div class="clr"></div>
             </div>
             <!--/.entry-inner-left-->

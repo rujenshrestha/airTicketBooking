@@ -326,12 +326,16 @@ jQuery(document)
 													'slow').parent().children(
 													"#flightDemoLoading")
 													.fadeOut('slow');
-										} else {
+                                            $("#flightDemoComplete ul").css("display","none");
+
+                                        } else {
 											$("#flightDemoFormErrorInner ul")
 													.append(errList);
 											$("#flightDemoFormError").dialog(
 													"open");
-										}
+                                            $("#flightDemoComplete ul").css("display","none");
+
+                                        }
 									});
 					// Error Modal
 					$("#flightDemoFormError").dialog({
@@ -349,6 +353,7 @@ jQuery(document)
 										.children("#flightDemoLoading")
 										.fadeOut('slow');
 								$("#flightDemoComplete ul").html("");
+								$("#flightDemoComplete ul").css("display","none");
 							});
 				});
 
