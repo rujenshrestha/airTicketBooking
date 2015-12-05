@@ -83,21 +83,21 @@ if(session.getAttribute("id")!=null){
                                     <td width="2%">&nbsp;</td>
                                     <td width="22%">&nbsp;</td>
                                     <td width="15%">First Name </td>
-                                    <td width="58%"><input type="text" name="fullname" value="<%=tempMap.get("firstName")%>" maxlength="50" readonly></td>
+                                    <td width="58%"><input type="text" name="firstName" value="<%=tempMap.get("firstName")%>" maxlength="50" readonly></td>
                                     <td width="16%">&nbsp;</td>
                                   </tr>
                                   <tr bgcolor="#FFFFFF">
                                     <td width="2%">&nbsp;</td>
                                     <td width="22%">&nbsp;</td>
                                     <td width="15%">Middle Name </td>
-                                    <td width="58%"><input type="text" name="fullname" value="<%=tempMap.get("middleName")%>" maxlength="50" readonly></td>
+                                    <td width="58%"><input type="text" name="middleName" value="<%=tempMap.get("middleName")%>" maxlength="50" readonly></td>
                                     <td width="16%">&nbsp;</td>
                                   </tr>
                                   <tr bgcolor="#FFFFFF">
                                     <td width="2%">&nbsp;</td>
                                     <td width="22%">&nbsp;</td>
                                     <td width="15%">Last Name </td>
-                                    <td width="58%"><input type="text" name="fullname" value="<%=tempMap.get("lastName")%>" maxlength="50" readonly></td>
+                                    <td width="58%"><input type="text" name="lastName" value="<%=tempMap.get("lastName")%>" maxlength="50" readonly></td>
                                     <td width="16%">&nbsp;</td>
                                   </tr>
                                   <tr bgcolor="#FFFFFF">
@@ -145,7 +145,7 @@ if(session.getAttribute("id")!=null){
                                   <tr bgcolor="#FFFFFF">
                                     <td>&nbsp;</td>
                                     <td>&nbsp;</td>
-                                    <td>Bank </td>
+                                    <td>Bank </td>  
                                     <td>
                                     	<select name="bnkId">
                                     	<option value="<%=tempMap.get("bankId") %>"><%=bankDesc%></option>
@@ -164,7 +164,7 @@ if(session.getAttribute("id")!=null){
                                     <td>&nbsp;</td>
                                     <td>&nbsp;</td>
                                     <td>Account No. </td>
-                                    <td><input type="text" name="email" value="<%=tempMap.get("accountNo") %>" maxlength="50" required></td>
+                                    <td><input type="text" name="accountNo" value="<%=tempMap.get("accountNo") %>" maxlength="50" required></td>
                                     <td width="16%">&nbsp;</td>
                                   </tr>
                                   <tr bgcolor="#FFFFFF">

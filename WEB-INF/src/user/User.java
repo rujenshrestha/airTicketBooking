@@ -124,7 +124,7 @@ public class User {
 		
 		public void updateUserDetail(String usrId,String firstName,String middleName,String lastName,
 									  String address,String phone,String bankId,String accountNo,
-									  String mobileNo,String emailId){
+									  String mobileNo,String emailId,String username,String password){
 			try{
 				
 				con = dbcon.getDbConnection() ;
@@ -138,11 +138,19 @@ public class User {
 				stmt.setString(3,lastName);
 				stmt.setString(4,address);
 				stmt.setInt(5,Integer.parseInt(phone));
-				stmt.setInt(6,Integer.parseInt(mobileNo));
+				stmt.setLong(6,Long.parseLong(mobileNo));
 				stmt.setString(7,emailId);
 				stmt.setString(8,accountNo);
 				stmt.setInt(9,Integer.parseInt(bankId));
 				stmt.setInt(10, Integer.parseInt(usrId));
+				stmt.executeUpdate();
+				
+				sql="update authentication set username=?, pwd=? where id =? and role_cd ='U'";
+				stmt =con.prepareStatement(sql);
+				stmt.setString(1,username);
+				stmt.setString(2,password);
+				stmt.setInt(3,Integer.parseInt(usrId));
+				
 				stmt.executeUpdate();
 				
 			} catch (SQLException errSql){
