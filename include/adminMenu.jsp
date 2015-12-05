@@ -41,7 +41,11 @@
                         <h3>Flight Schedule</h3>
                         <a href="<%=request.getContextPath() + "/pages/adminPages/addFlightSchedule.jsp"%>">Add Schedule</a>
                         <a href="<%=request.getContextPath() + "/pages/adminPages/viewFlightSchedule.jsp"%>">View Schedule</a>
+                    	<h3>Transaction</h3>
+                    	<a href="<%=request.getContextPath() + "/pages/adminPages/transactionForm.jsp"%>">View Transaction</a>
+                        <a href="#">&nbsp;</a>
                     </div>
+                    
                     
                 </div>
             </div>
