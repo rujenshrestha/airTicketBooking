@@ -26,7 +26,10 @@ jQuery(document)
 						source : availableTags
 					});
 					// Datepicker
-					$(".datepicker").datepicker({
+                    $("#datepicker").datepicker();
+
+                    $(".datepicker").datepicker({
+                        minDate:0,
 						inline : true
 					});
 					var today = new Date();
