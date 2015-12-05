@@ -6,7 +6,7 @@
 <html lang="us"> 
 <head>  
     <meta charset="utf-8">
-    <title>jQuery UI Composite Demo - Flight Booking</title>
+    <title>Air Ticket Booking</title>
     <link href="/airTicketBooking/css/bookingForm/reset.css" rel="stylesheet">
     <link
             href="/airTicketBooking/css/bookingForm/ui-lightness/jquery-ui-1.9.0.custom.css"

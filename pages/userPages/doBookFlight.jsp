@@ -66,8 +66,11 @@ try{
 		</jsp:forward>
 	<%
 }%>
-		<jsp:forward page="userDashboard.jsp" >
+		<jsp:forward page="showBookingDetails.jsp" >
 			<jsp:param name="msg" value="Seat Booked Succesfully." />
+			<jsp:param name="schId" value="<%=schId %>" />
+			<jsp:param name="usrId" value="<%=usrId %>" />
+			<jsp:param name="seatList" value="<%=seatList %>" />
 		</jsp:forward>
 
 </body>
