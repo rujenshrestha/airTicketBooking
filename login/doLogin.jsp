@@ -12,6 +12,7 @@
 String url=request.getContextPath();
 String username = request.getParameter("username").toString();
 String password = request.getParameter("password").toString();
+System.out.println("username: "+username+" password: "+password);
 
 Login login = new Login();
 
