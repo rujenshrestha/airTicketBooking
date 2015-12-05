@@ -173,6 +173,7 @@ public class User {
 						    String phone,String mobileNo,String emailId,String bankId,
 						    String accountNo,String username,String password){
 			try{
+				int i =0;
 			
 				con = dbcon.getDbConnection() ;
 				sql ="insert into users(first_name,middle_name,last_name,address,phone,mobile_no,"
@@ -199,7 +200,8 @@ public class User {
 				stmt.setLong(3,Long.parseLong(mobileNo));
 				rs = stmt.executeQuery();
 				
-				if(rs.next()){
+				while(rs.next()){
+					System.out.println("inside add while...");
 					String usrId = rs.getString("usr_id");
 					sql="insert into authentication(username,pwd,role_cd,status_cd,id) "
 						+ "values(?,?,'U','E',?)";

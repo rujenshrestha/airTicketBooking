@@ -100,9 +100,11 @@ java.util.Iterator schDetail = sch.getScheduleDetail(schId).iterator();
 				
 				<label>Airline :<input type="text" value="<%=airlineDesc%>" readonly> </label>
 
-				<label>Departure from :<input type="text" value="<%=fromLocDesc%>" readonly> </label>
+				<label>From :<input type="text" value="<%=fromLocDesc%>" readonly> </label>
 
-				<label>Going to :<input type="text" value="<%=toLocDesc%>" readonly> </label>
+				<label>To :<input type="text" value="<%=toLocDesc%>" readonly> </label>
+				
+				<label>Fare: <input type="text" value="<%=tempMap.get("price")%>" readonly></label>
 
 				<label>Flight Date :<input type="text" value="<%=tempMap.get("flightDate")%>" readonly> </label>
 

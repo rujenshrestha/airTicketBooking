@@ -76,6 +76,7 @@ result ="Dear "+name+","+
 	    "\nAirline: "+airlineDesc+
 	    "\nDeparture: "+fromLocDesc+
 	    "\nArrival: "+toLocDesc+
+	    "\nTotal: "+
 	    "\nFlightDate: "+flightDate+
 	    "\nFlightTime: "+flightTime;
 
