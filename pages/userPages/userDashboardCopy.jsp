@@ -86,7 +86,10 @@ java.util.Iterator toLocList = loc.getlocationList().iterator();
                                 id="flightFrom" name="flightFrom"
                                 class="watermark watermarked autocomplete ui-corner-all"
                                 autocomplete="off" title="City or Airport Code" value="">
-
+                                <%
+                                	fromLocDesc = loc.getlocationDesc(fromLocId);
+                                %>
+								<option value="<%=fromLocId%>"><%=fromLocDesc%></option>
                             		<%
 									while(fromLocList.hasNext()){
 										HashMap tempMap = (HashMap) fromLocList.next();
@@ -103,6 +106,11 @@ java.util.Iterator toLocList = loc.getlocationList().iterator();
                                                                             autocomplete="off"
                                                                             title="City or Airport Code" value="">
 
+                            	<%
+                                	toLocDesc = loc.getlocationDesc(toLocId);
+                                %>
+								<option value="<%=toLocId%>"><%=toLocDesc%></option>
+                           
                             <%
 									while(toLocList.hasNext()){
 										HashMap tempMap = (HashMap) toLocList.next();
