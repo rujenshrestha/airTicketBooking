@@ -26,6 +26,6 @@ if(request.getParameter("msg")!=null){
 	                          	<%} %>
                            </font> 
                           
-<div style="position:fixed;bottom:0;width:100%"><jsp:include page="/include/footer.jsp" /></div>               
+<div style="position:fixed;bottom:0;width:100%;z-index:1000;"><jsp:include page="/include/footer.jsp" /></div>
 </body>
 </html>

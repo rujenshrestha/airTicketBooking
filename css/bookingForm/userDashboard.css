@@ -472,6 +472,21 @@ ul.bottom-content-widgets .ui-tooltip-content {
 #flightToWrap {
     margin: 0 0 0 20%;
 }
+#airlineWrap select {
+    width: 200px;
+    height: 2.0em;
+    margin: 1.5em 0 1.0em 0;
+    padding: 0.2em 0.5em;
+    border: 1px solid #abadb3;
+}
+
+#airlineWrap {
+    float: left;
+    width: 200px;
+    height: auto;
+
+}
+
 
 #dateWrap {
     /*float: left;

@@ -187,6 +187,18 @@ java.util.Iterator toLocList = loc.getlocationList().iterator();
                         </div>
                         <div class="clr"></div>
                     </div>
+                    <div id="airlineWrap">
+                        <label for="flightTo">Airlines:</label>
+                        <select id="airline"
+                                name="airline"
+                                class="watermark watermarked autocomplete ui-corner-all"
+                                autocomplete="off"
+                                title="City or Airport Code" value="">
+
+                            <option value="">k xa yar</option>
+
+                        </select>
+                    </div>
                     <div id="searchWrap">
                         <%--<button id="button">Search</button>--%>
                             <input type="submit" id="button" value="search">
@@ -253,7 +265,7 @@ java.util.Iterator toLocList = loc.getlocationList().iterator();
 
         </div>
 
-<div style="position:fixed;bottom:0;width:100%"><jsp:include page="/include/footer.jsp" /></div>
+<div style="position:fixed;bottom:0;width:100%;z-index:1000;"><jsp:include page="/include/footer.jsp" /></div>
 </div>
 </body>
 </html>
