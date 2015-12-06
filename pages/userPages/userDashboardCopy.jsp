@@ -276,8 +276,8 @@ java.util.Iterator airlineList = air.getAirlineList().iterator();
         	%>
         	<form  name="f1" action="bookingForm.jsp?schId=<%=tempMap.get("schId")%>" method="post">
 	             <%=airlineDesc%> <br>
-	             From :<%=fromLocDesc%> To :<%=toLocDesc%> <br>
-	             Date :<%=tempMap.get("flightDate")%>    Time :<%=tempMap.get("flightTime")%> 
+	             From :<%=fromLocDesc%>&nbsp;&nbsp; To :<%=toLocDesc%> <br>
+	             Date :<%=tempMap.get("flightDate")%>&nbsp;&nbsp; Time :<%=tempMap.get("flightTime")%> &nbsp;&nbsp;Price: <%=tempMap.get("price")%>
 	            <input type="submit" name="book" value="book"> 
 	          </form>
 	          <br>
