@@ -2,6 +2,7 @@
 <jsp:include page="/include/userSessionManager.jsp" />
 <!doctype html>
 <%@page import="location.Location" %>
+<%@page import="airline.Airline" %>
 <%@page import="java.util.* " %>
 <html lang="us">   
 <head>
@@ -52,8 +53,11 @@ if(request.getParameter("msg")!=null){
 	msg = request.getParameter("msg").toString();
 }
 Location loc = new Location();
+Airline air = new Airline();
+
 java.util.Iterator fromLocList = loc.getlocationList().iterator();
 java.util.Iterator toLocList = loc.getlocationList().iterator();
+java.util.Iterator airlineList = air.getAirlineList().iterator();
 
  
 %>
@@ -180,8 +184,13 @@ java.util.Iterator toLocList = loc.getlocationList().iterator();
                                     class="watermark watermarked autocomplete ui-corner-all"
                                     autocomplete="off"
                                     title="City or Airport Code" value="">
-
-                                <option value="">k xa yar</option>
+									<option value="A">ANY</option>
+                                 <%
+									while(airlineList.hasNext()){
+										HashMap tempMap = (HashMap) airlineList.next();
+									%>	
+                                    	<option value="<%=tempMap.get("alnId")%>"><%=tempMap.get("airlineDesc")%></option>
+									<%} %>
 
                             </select>
                         </div>

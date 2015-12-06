@@ -35,9 +35,11 @@ String msg="";
 if(request.getParameter("msg")!=null){
 	msg = request.getParameter("msg").toString();
 }
+String total=" ";
 String schId= request.getParameter("schId").toString();
 String usrId= request.getParameter("usrId").toString();
 String seatList = request.getParameter("seatList").toString();
+total = request.getParameter("total").toString();
 
 String name ="";
 String fromLocDesc="";
@@ -65,7 +67,7 @@ while(schDetail.hasNext()){
 	
 	fromLocDesc = loc.getlocationDesc(tempMap.get("fromLocId").toString());
 	toLocDesc = loc.getlocationDesc(tempMap.get("toLocId").toString());
-	flightDate = tempMap.get("flightDate").toString();
+	flightDate = tempMap.get("flightDate").toString();  
 	flightTime = tempMap.get("flightTime").toString();
 	airlineDesc = aln.getAirlineDesc(tempMap.get("alnId").toString());
 }
@@ -76,7 +78,7 @@ result ="Dear "+name+","+
 	    "\nAirline: "+airlineDesc+
 	    "\nDeparture: "+fromLocDesc+
 	    "\nArrival: "+toLocDesc+
-	    "\nTotal: "+
+	    "\nTotal: "+total+
 	    "\nFlightDate: "+flightDate+
 	    "\nFlightTime: "+flightTime;
 

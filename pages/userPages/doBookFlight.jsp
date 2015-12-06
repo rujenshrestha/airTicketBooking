@@ -15,10 +15,13 @@
 String schId = request.getParameter("schId").toString();
 String usrId = request.getParameter("usrId").toString();
 String seatList = request.getParameter("selectedSeat").toString();
+String price = request.getParameter("price").toString();
+String totalFare="";
 
 String seatNo="";
 int i =0;
 int totalSeat=0;
+int fare;
 
 List result=new ArrayList();
 while(i<seatList.length()){
@@ -44,12 +47,21 @@ while(i<seatList.length()){
 
 System.out.println("total seat:: "+totalSeat);
 
+try{
+	fare = Integer.parseInt(price);
+	fare = fare * totalSeat;
+	totalFare =String.valueOf(fare);
+	
+}catch(Exception e){
+	System.out.println("Exception in doBookFlight Parsing: "+e);
+}
+
 Reservation res = new Reservation();
 Transaction txn = new Transaction();
 
 %>
 <body>
-
+  
 <%
 
 try{
@@ -71,6 +83,7 @@ try{
 			<jsp:param name="schId" value="<%=schId %>" />
 			<jsp:param name="usrId" value="<%=usrId %>" />
 			<jsp:param name="seatList" value="<%=seatList %>" />
+			<jsp:param name="total" value="<%=totalFare %>" />
 		</jsp:forward>
 
 </body>

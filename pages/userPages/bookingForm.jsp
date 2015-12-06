@@ -83,7 +83,7 @@ java.util.Iterator schDetail = sch.getScheduleDetail(schId).iterator();
 
 %>
 
-	<div id="main-container" class="main-container">
+	<div id="main-container" class="main-container">  
 	<jsp:include page="/include/header.jsp" />
  		<jsp:include page="/include/userMenu.jsp" />
  		<a href="userDashboard.jsp">Home&gt;&gt;</a>
@@ -105,7 +105,7 @@ java.util.Iterator schDetail = sch.getScheduleDetail(schId).iterator();
 
 				<label>To :<input type="text" value="<%=toLocDesc%>" readonly> </label>
 				
-				<label>Fare: <input type="text" value="<%=tempMap.get("price")%>" readonly></label>
+				<label>Fare(Per 1 Seat): <input type="text" value="<%=tempMap.get("price")%>" name="price" readonly></label>
 
 				<label>Flight Date :<input type="text" value="<%=tempMap.get("flightDate")%>" readonly> </label>
 
