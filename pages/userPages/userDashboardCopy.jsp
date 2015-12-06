@@ -56,7 +56,7 @@ String departTimeTod = request.getParameter("departTimeTod").toString();
 String alnId = request.getParameter("alnId").toString();
 
 
-System.out.println("values: "+fromLocId+"..."+toLocId+"..."+departureDate+"..."+departTimeFrame);
+System.out.println("values: "+fromLocId+"..."+toLocId+"..."+departureDate+"..."+departTimeFrame+"...."+alnId);
 
 Schedule sch = new Schedule();
 
@@ -64,7 +64,7 @@ String fromLocDesc="";
 String toLocDesc="";
 String airlineDesc="";
 
-java.util.Iterator schList = sch.getSchedule(fromLocId, toLocId,"alnId", departureDate,"time").iterator();
+java.util.Iterator schList = sch.getSchedule(fromLocId, toLocId,alnId, departureDate,"time").iterator();
 
 Location loc = new Location();
 Airline air = new Airline();

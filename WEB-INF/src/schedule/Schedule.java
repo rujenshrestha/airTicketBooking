@@ -73,8 +73,13 @@ public class Schedule {
 					try{
 						
 						con = dbcon.getDbConnection() ;
-						sql ="select * from flight_schedule where from_loc_id =? and to_loc_id=? "
-							+"and flight_date=? and flight_time between '00:00:00' and '24:00:00'";
+						if(alnId.matches("A")){
+							sql ="select * from flight_schedule where from_loc_id =? and to_loc_id=? "
+								+"and flight_date=?";
+						}else{
+							sql ="select * from flight_schedule where from_loc_id =? and to_loc_id=? "
+									+"and flight_date=? and aln_id="+alnId;
+						}
 						stmt = con.prepareStatement(sql);
 						stmt.setInt(1,Integer.parseInt(fromLocId));
 						stmt.setInt(2,Integer.parseInt(toLocId));
