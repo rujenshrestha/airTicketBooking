@@ -83,7 +83,7 @@ java.util.Iterator schDetail = sch.getScheduleDetail(schId).iterator();
 
 %>
 
-	<div id="main-container" class="main-container">
+	<div id="main-container" class="main-container">  
 	<jsp:include page="/include/header.jsp" />
  		<jsp:include page="/include/userMenu.jsp" />
  		<a href="userDashboard.jsp">Home&gt;&gt;</a>

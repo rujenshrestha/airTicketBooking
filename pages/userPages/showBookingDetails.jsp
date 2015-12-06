@@ -67,7 +67,7 @@ while(schDetail.hasNext()){
 	
 	fromLocDesc = loc.getlocationDesc(tempMap.get("fromLocId").toString());
 	toLocDesc = loc.getlocationDesc(tempMap.get("toLocId").toString());
-	flightDate = tempMap.get("flightDate").toString();
+	flightDate = tempMap.get("flightDate").toString();  
 	flightTime = tempMap.get("flightTime").toString();
 	airlineDesc = aln.getAirlineDesc(tempMap.get("alnId").toString());
 }
