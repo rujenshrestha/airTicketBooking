@@ -56,7 +56,7 @@ java.util.Iterator bankList = bank.getBankList().iterator();
                                 <a href="/airTicketBooking/index.jsp">Home</a>
                             </li>
                             <li>
-                                <a href="#">About Us</a>
+                                <a href="/airTicketBooking/aboutUs.jsp">About Us</a>
                             </li>
                             
                             <!-- <li class="dropdown">

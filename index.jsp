@@ -42,7 +42,7 @@
 						<ul class="nav navbar-nav pull-right">
 							
 							<li>
-								<a href="#">About Us</a>
+								<a href="/airTicketBooking/aboutUs.jsp">About Us</a>
 							</li>
 							
 							<li>
