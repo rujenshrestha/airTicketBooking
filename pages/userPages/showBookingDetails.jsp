@@ -81,17 +81,20 @@ result ="Dear "+name+","+
 	    "\nFlightTime: "+flightTime;
 
 %>
-
+  
 	<div id="main-container" class="main-container">
 	<jsp:include page="/include/header.jsp" />
  		<jsp:include page="/include/userMenu.jsp" />
  		<a href="userDashboard.jsp">Home&gt;&gt;</a>
-		<div class="left-side" class="left">
-    		<label>Booking Succesfull</label>
+		<div align="center">
+    		<label STYLE="font-weight: bold;font-size:24px">Booking Succesfull</label>
     		<br>
     		<br>
-    		<pre><%=result %></pre>
+    		<pre STYLE="font-size:16px"><%=result %></pre>
 			
+		</div>
+		<div align="center" padding="20px">
+			<input type="button" value="print" onClick="window.print() "/>
 		</div>
 
 
