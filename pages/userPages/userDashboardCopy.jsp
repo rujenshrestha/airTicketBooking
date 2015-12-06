@@ -53,6 +53,7 @@ String departureDate = request.getParameter("departureDate").toString();
 String returnDate = request.getParameter("returnDate").toString();
 String departTimeFrame = request.getParameter("departTimeFrame").toString();
 String departTimeTod = request.getParameter("departTimeTod").toString();
+String alnId = request.getParameter("alnId").toString();
 
 
 System.out.println("values: "+fromLocId+"..."+toLocId+"..."+departureDate+"..."+departTimeFrame);
@@ -67,6 +68,8 @@ java.util.Iterator schList = sch.getSchedule(fromLocId, toLocId,"alnId", departu
 
 Location loc = new Location();
 Airline air = new Airline();
+
+airlineDesc = air.getAirlineDesc(alnId);
 
 java.util.Iterator fromLocList = loc.getlocationList().iterator();
 java.util.Iterator toLocList = loc.getlocationList().iterator();
@@ -194,10 +197,11 @@ java.util.Iterator airlineList = air.getAirlineList().iterator();
                     <div id="airlineWrap">
                             <label for="flightTo">Airlines:</label>
                             <select id="airline"
-                                    name="airline"
+                                    name="alnId"
                                     class="watermark watermarked autocomplete ui-corner-all"
                                     autocomplete="off"
                                     title="City or Airport Code" value="">
+                                    <option value="<%=alnId%>"><%=airlineDesc %></option>
 									<option value="A">ANY</option>
                                  <%
 									while(airlineList.hasNext()){
