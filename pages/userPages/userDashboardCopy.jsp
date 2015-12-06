@@ -1,6 +1,7 @@
 <!doctype html>
 <jsp:include page="/include/userSessionManager.jsp" />
 <%@page import="location.Location" %>
+<%@page import="airline.Airline" %>
 <%@page import="schedule.Schedule" %>
 <%@page import="java.util.* " %>
 <html lang="us"> 
@@ -65,8 +66,11 @@ String airlineDesc="";
 java.util.Iterator schList = sch.getSchedule(fromLocId, toLocId,"alnId", departureDate,"time").iterator();
 
 Location loc = new Location();
+Airline air = new Airline();
+
 java.util.Iterator fromLocList = loc.getlocationList().iterator();
 java.util.Iterator toLocList = loc.getlocationList().iterator();
+java.util.Iterator airlineList = air.getAirlineList().iterator();
 
 
 %>
@@ -187,6 +191,23 @@ java.util.Iterator toLocList = loc.getlocationList().iterator();
                         </div>
                         <div class="clr"></div>
                     </div>
+                    <div id="airlineWrap">
+                            <label for="flightTo">Airlines:</label>
+                            <select id="airline"
+                                    name="airline"
+                                    class="watermark watermarked autocomplete ui-corner-all"
+                                    autocomplete="off"
+                                    title="City or Airport Code" value="">
+									<option value="A">ANY</option>
+                                 <%
+									while(airlineList.hasNext()){
+										HashMap tempMap = (HashMap) airlineList.next();
+									%>	
+                                    	<option value="<%=tempMap.get("alnId")%>"><%=tempMap.get("airlineDesc")%></option>
+									<%} %>
+
+                            </select>
+                        </div>
                     <div id="searchWrap">
                         <%--<button id="button">Search</button>--%>
                             <input type="submit" id="button" value="search">
