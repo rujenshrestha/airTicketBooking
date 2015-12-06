@@ -40,15 +40,11 @@
 					</div>
 					<div class="collapse navbar-collapse" id="myNavbar">
 						<ul class="nav navbar-nav pull-right">
-							<li class="active">
-								<a href="#">Home</a>
-							</li>
+							
 							<li>
-								<a href="#">About</a>
+								<a href="#">About Us</a>
 							</li>
-							<li>
-								<a href="#">Services</a>
-							</li>
+							
 							<li>
 								<a href="/airTicketBooking/login/login.jsp">Login/Sign
 									Up</a>
@@ -247,50 +243,12 @@
 				<i class="fa fa-facebook lightgreen padding fontsize"></i>
 			</a>
 			<a href="#">
-				<i class="fa fa-dribbble lightgreen padding fontsize"></i>
-			</a>
-			<a href="#">
-				<i class="fa fa-flickr lightgreen padding fontsize"></i>
-			</a>
-			<a href="#">
 				<i class="fa fa-github lightgreen padding fontsize"></i>
 			</a>
 		</div>
 	</div>
 	<div class="row">
-		<div class="container-fluid background-black padding-10">
-			<small>
-				<a class="padding lightblack" href="#">Home</a>
-				|
-			</small>
-			<small>
-				<a class="padding lightblack" href="#">About</a>
-				|
-			</small>
-			<small>
-				<a class="padding lightblack" href="#">Services</a>
-				|
-			</small>
-			<small>
-				<a class="padding lightblack" href="#">Price</a>
-				|
-			</small>
-			<small>
-				<a class="padding lightblack" href="#">Projects</a>
-				|
-			</small>
-			<small>
-				<a class="padding lightblack" href="#">Contact</a>
-			</small>
-			<small>
-				<p class="pull-right lightblack">
-					Copyright @ 2015. Tempelate by
-					<a class="lightblack" href="#">
-						<i>ABC</i>
-					</a>
-				</p>
-			</small>
-		</div>
+		<jsp:include page="/include/footer.jsp"/>
 	</div>
 	</div>
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
