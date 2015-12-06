@@ -81,7 +81,7 @@ result ="Dear "+name+","+
 	    "\nFlightTime: "+flightTime;
 
 %>
-
+  
 	<div id="main-container" class="main-container">
 	<jsp:include page="/include/header.jsp" />
  		<jsp:include page="/include/userMenu.jsp" />
