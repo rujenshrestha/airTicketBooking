@@ -105,7 +105,7 @@ java.util.Iterator schDetail = sch.getScheduleDetail(schId).iterator();
 
 				<label>To :<input type="text" value="<%=toLocDesc%>" readonly> </label>
 				
-				<label>Fare: <input type="text" value="<%=tempMap.get("price")%>" readonly></label>
+				<label>Fare(Per 1 Seat): <input type="text" value="<%=tempMap.get("price")%>" name="price" readonly></label>
 
 				<label>Flight Date :<input type="text" value="<%=tempMap.get("flightDate")%>" readonly> </label>
 
