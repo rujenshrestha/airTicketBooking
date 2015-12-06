@@ -45,6 +45,12 @@ String fromLocDesc="";
 String toLocDesc="";
 String seatList= "";
 String airlineDesc="";
+String seatQnty="";
+int totSeat;
+int r;
+int c;
+String row="";
+String column="";
 int i=0;
 
 Schedule sch= new Schedule();
@@ -96,6 +102,7 @@ java.util.Iterator schDetail = sch.getScheduleDetail(schId).iterator();
 
 					fromLocDesc= loc.getlocationDesc(tempMap.get("fromLocId").toString());
 					toLocDesc= loc.getlocationDesc(tempMap.get("toLocId").toString());
+					seatQnty = tempMap.get("seatQnty").toString();
 			%>
 				<label>Name :<input type="text" value="<%=name%>" readonly> </label>
 				
@@ -120,7 +127,20 @@ java.util.Iterator schDetail = sch.getScheduleDetail(schId).iterator();
 
 		</div>
 
+<%
+try{
+	totSeat = Integer.parseInt(seatQnty);
+	c = totSeat/4;
+	r = 4;
+	row = String.valueOf(r);
+	column = String.valueOf(c);
+	System.out.println("ROW: "+row+"  COLUMN: "+column);
+	
+}catch(Exception e){
+	System.out.println("Exception bookingForm.jsp Parsing: "+e);
+}
 
+%>
 		<div class="right-side">
 
 			<form id="form1">
@@ -128,6 +148,8 @@ java.util.Iterator schDetail = sch.getScheduleDetail(schId).iterator();
 					corresponding seat in the layout below:</h2>
 				<div id="holder">
 					<span id="bookedSeatSpan" hidden><%=seatList%></span>
+					<span id="row" hidden><%=row%></span>
+					<span id="column" hidden><%=column%></span>
 					<ul id="place">
 
 					</ul>
