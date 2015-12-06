@@ -27,7 +27,7 @@ public class Location {
 					try{
 						
 						con = dbcon.getDbConnection() ;
-						sql ="select * from location";
+						sql ="SELECT * FROM location ORDER BY loc_desc ASC";
 						stmt = con.prepareStatement(sql);  
 						rs = stmt.executeQuery();
 						
