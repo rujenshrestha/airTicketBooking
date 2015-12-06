@@ -236,7 +236,7 @@ java.util.Iterator toLocList = loc.getlocationList().iterator();
 
 
         	<%if(schList.hasNext()==false){ %>
-        		<div><label>No Flight Schedule Found.</label></div>
+        		<div><label style="color: red; font-size: 52px;">No Flight Schedule Found.</label></div>
         	<%}
         		while(schList.hasNext()){
         			HashMap tempMap = (HashMap) schList.next();
