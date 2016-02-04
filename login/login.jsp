@@ -92,18 +92,18 @@ java.util.Iterator bankList = bank.getBankList().iterator();
 								<a href="#" class="active" id="login-form-link">Login</a>
 							</div>
 							<div class="col-xs-6">
-								<a href="#" id="register-form-link">Register</a>
+								<a href="#" id="register-form-link" onclick="removeSignUpMsg()">Register</a>
 							</div>
 						</div>
 						<hr>
 					</div>
 					<div class="panel-body">
-					<div>
-						<font color="#FF0000">
+					<div >
+						<span style="color: #FF0000"  id="loginMsg">
 	                          	<%if(!msg.matches("")){ %>
 	                          	<%=msg %>
 	                          	<%} %>
-                        </font> 
+                        </span>
                      </div>
 						<div class="row">
 							<div class="col-lg-12">
@@ -235,7 +235,13 @@ java.util.Iterator bankList = bank.getBankList().iterator();
 				e.preventDefault();
 			});
 
-	});    	
+	});
+	function removeSignUpMsg(){
+        $('#loginMsg').text("");
+        console.log("hi");
+
+
+	}
     </script>
 
     <div valign="top" bgcolor="#FFFFFF">
