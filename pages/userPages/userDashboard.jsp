@@ -180,7 +180,7 @@ java.util.Iterator airlineList = air.getAirlineList().iterator();
                         <div id="airlineWrap">
                             <label for="flightTo">Airlines:</label>
                             <select id="airline"
-                                    name="airline"
+                                    name="alnId"
                                     class="watermark watermarked autocomplete ui-corner-all"
                                     autocomplete="off"
                                     title="City or Airport Code" value="">

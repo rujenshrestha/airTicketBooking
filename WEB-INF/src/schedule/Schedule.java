@@ -70,11 +70,17 @@ public class Schedule {
 				public List getSchedule(String fromLocId,String toLocId,String alnId,String date,String time){
 					
 					date = dt.changeDateFormat(date,"MM/dd/yyyy","yyyy-MM-dd") ;
+					ResultSet rs1=null;
 					try{
 						
 						con = dbcon.getDbConnection() ;
-						sql ="select * from flight_schedule where from_loc_id =? and to_loc_id=? "
-							+"and flight_date=? and flight_time between '00:00:00' and '24:00:00'";
+						if(alnId.matches("A")){
+							sql ="select * from flight_schedule where from_loc_id =? and to_loc_id=? "
+								+"and flight_date=?";
+						}else{
+							sql ="select * from flight_schedule where from_loc_id =? and to_loc_id=? "
+									+"and flight_date=? and aln_id="+alnId;
+						}
 						stmt = con.prepareStatement(sql);
 						stmt.setInt(1,Integer.parseInt(fromLocId));
 						stmt.setInt(2,Integer.parseInt(toLocId));
@@ -84,19 +90,26 @@ public class Schedule {
 						
 						result  = new ArrayList();	
 						while ( rs.next() ) {
-							resultMap = new HashMap();
+							sql="SELECT * FROM reservation WHERE sch_id = "+rs.getString("sch_id");
+							System.out.println(sql);
+							stmt = con.prepareStatement(sql);
+							rs1 = stmt.executeQuery();
+							if(rs1.next()){
 							
-							resultMap.put("schId",rs.getString("sch_id"));
-							resultMap.put("alnId",rs.getString("aln_id"));
-							resultMap.put("fromLocId",rs.getString("from_loc_id"));
-							resultMap.put("toLocId",rs.getString("to_loc_id"));
-							resultMap.put("price",rs.getString("price"));
-							resultMap.put("flightTime",rs.getString("flight_time"));
-							resultMap.put("flightDate",rs.getString("flight_date"));
-							resultMap.put("class",rs.getString("class"));
-							resultMap.put("seatQnty",rs.getString("seat_qnty"));
-												
-							result.add(resultMap);
+								resultMap = new HashMap();
+								
+								resultMap.put("schId",rs.getString("sch_id"));
+								resultMap.put("alnId",rs.getString("aln_id"));
+								resultMap.put("fromLocId",rs.getString("from_loc_id"));
+								resultMap.put("toLocId",rs.getString("to_loc_id"));
+								resultMap.put("price",rs.getString("price"));
+								resultMap.put("flightTime",rs.getString("flight_time"));
+								resultMap.put("flightDate",rs.getString("flight_date"));
+								resultMap.put("class",rs.getString("class"));
+								resultMap.put("seatQnty",rs.getString("seat_qnty"));
+													
+								result.add(resultMap);	
+							}
 						}
 					} catch (SQLException errSql){
 						System.out.println("SQL Exception in getSchedule:"+errSql);			

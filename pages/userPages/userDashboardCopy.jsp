@@ -1,6 +1,7 @@
 <!doctype html>
 <jsp:include page="/include/userSessionManager.jsp" />
 <%@page import="location.Location" %>
+<%@page import="airline.Airline" %>
 <%@page import="schedule.Schedule" %>
 <%@page import="java.util.* " %>
 <html lang="us"> 
@@ -52,9 +53,10 @@ String departureDate = request.getParameter("departureDate").toString();
 String returnDate = request.getParameter("returnDate").toString();
 String departTimeFrame = request.getParameter("departTimeFrame").toString();
 String departTimeTod = request.getParameter("departTimeTod").toString();
+String alnId = request.getParameter("alnId").toString();
 
 
-System.out.println("values: "+fromLocId+"..."+toLocId+"..."+departureDate+"..."+departTimeFrame);
+System.out.println("values: "+fromLocId+"..."+toLocId+"..."+departureDate+"..."+departTimeFrame+"...."+alnId);
 
 Schedule sch = new Schedule();
 
@@ -62,17 +64,25 @@ String fromLocDesc="";
 String toLocDesc="";
 String airlineDesc="";
 
-java.util.Iterator schList = sch.getSchedule(fromLocId, toLocId,"alnId", departureDate,"time").iterator();
+java.util.Iterator schList = sch.getSchedule(fromLocId, toLocId,alnId, departureDate,"time").iterator();
 
 Location loc = new Location();
+Airline air = new Airline();
+
+if(!alnId.matches("A")){
+	airlineDesc = air.getAirlineDesc(alnId);
+}
+
 java.util.Iterator fromLocList = loc.getlocationList().iterator();
 java.util.Iterator toLocList = loc.getlocationList().iterator();
+java.util.Iterator airlineList = air.getAirlineList().iterator();
 
 
 %>
 <div id="main-container" class="main-container">
 <jsp:include page="/include/header.jsp" />
  <jsp:include page="/include/userMenu.jsp" />
+<div align="left"><a href="userDashboard.jsp">Home&gt;&gt;</a></div>
     <div class="left-side" class="left">
         <div id="entryInnerWrap" class="entry-inner-wrap">
             <h1>Search/Book Flights</h1>
@@ -188,17 +198,25 @@ java.util.Iterator toLocList = loc.getlocationList().iterator();
                         <div class="clr"></div>
                     </div>
                     <div id="airlineWrap">
-                        <label for="flightTo">Airlines:</label>
-                        <select id="airline"
-                                name="airline"
-                                class="watermark watermarked autocomplete ui-corner-all"
-                                autocomplete="off"
-                                title="City or Airport Code" value="">
+                            <label for="flightTo">Airlines:</label>
+                            <select id="airline"
+                                    name="alnId"
+                                    class="watermark watermarked autocomplete ui-corner-all"
+                                    autocomplete="off"
+                                    title="City or Airport Code" value="">
+                                    <%if(!alnId.matches("A")){ %>
+                                    	<option value="<%=alnId%>"><%=airlineDesc %></option>
+                                    <%} %>
+									<option value="A">ANY</option>
+                                 <%
+									while(airlineList.hasNext()){
+										HashMap tempMap = (HashMap) airlineList.next();
+									%>
+                                    	<option value="<%=tempMap.get("alnId")%>"><%=tempMap.get("airlineDesc")%></option>
+									<%} %>
 
-                            <option value="">k xa yar</option>
-
-                        </select>
-                    </div>
+                            </select>
+                        </div>
                     <div id="searchWrap">
                         <%--<button id="button">Search</button>--%>
                             <input type="submit" id="button" value="search">
@@ -254,18 +272,21 @@ java.util.Iterator toLocList = loc.getlocationList().iterator();
         			HashMap tempMap = (HashMap) schList.next();
         			fromLocDesc= loc.getlocationDesc(tempMap.get("fromLocId").toString());
         			toLocDesc= loc.getlocationDesc(tempMap.get("toLocId").toString());
+        			airlineDesc =air.getAirlineDesc(tempMap.get("alnId").toString());
         	%>
         	<form  name="f1" action="bookingForm.jsp?schId=<%=tempMap.get("schId")%>" method="post">
-	             flight number <%=tempMap.get("schId")%> from <%=fromLocDesc%> to
-	            	 <%=toLocDesc%> date <%=tempMap.get("flightDate")%> 
-	            	 time <%=tempMap.get("flightTime")%> 
+	             <%=airlineDesc%> <br>
+	             From :<%=fromLocDesc%>&nbsp;&nbsp; To :<%=toLocDesc%> <br>
+	             Date :<%=tempMap.get("flightDate")%>&nbsp;&nbsp; Time :<%=tempMap.get("flightTime")%> &nbsp;&nbsp;Price: <%=tempMap.get("price")%>
 	            <input type="submit" name="book" value="book"> 
 	          </form>
+	          <br>
+	          <br>
 			<%} %>
 
         </div>
 
-<div style="position:fixed;bottom:0;width:100%;z-index:1000;"><jsp:include page="/include/footer.jsp" /></div>
+<div style="position:fixed;bottom:0;width:100%"><jsp:include page="/include/footer.jsp" /></div>
 </div>
 </body>
 </html>

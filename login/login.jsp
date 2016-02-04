@@ -53,14 +53,12 @@ java.util.Iterator bankList = bank.getBankList().iterator();
                     <div class="collapse navbar-collapse" id="myNavbar">
                         <ul class="nav navbar-nav pull-right">
                           <li class="active">
-                                <a href=""<%=request.getContextPath() + "index.jsp"%>"">Home</a>
+                                <a href="/airTicketBooking/index.jsp">Home</a>
                             </li>
                             <li>
-                                <a href="#">About</a>
+                                <a href="/airTicketBooking/aboutUs.jsp">About Us</a>
                             </li>
-                            <li>
-                                <a href="#">Services</a>
-                            </li>
+                            
                             <!-- <li class="dropdown">
                                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                                     Pages
@@ -208,51 +206,11 @@ java.util.Iterator bankList = bank.getBankList().iterator();
                 <i class="fa fa-facebook lightgreen padding fontsize"></i>
             </a>
             <a href="#">
-                <i class="fa fa-dribbble lightgreen padding fontsize"></i>
-            </a>
-            <a href="#">
-                <i class="fa fa-flickr lightgreen padding fontsize"></i>
-            </a>
-            <a href="#">
                 <i class="fa fa-github lightgreen padding fontsize"></i>
             </a>
         </div>
     </div>
-    <div class="row">
-        <div class="container-fluid background-black padding-10">
-            <small>
-                <a class="padding lightblack" href="#">Home</a>
-                |
-            </small>
-            <small>
-                <a class="padding lightblack" href="#">About</a>
-                |
-            </small>
-            <small>
-                <a class="padding lightblack" href="#">Services</a>
-                |
-            </small>
-            <small>
-                <a class="padding lightblack" href="#">Price</a>
-                |
-            </small>
-            <small>
-                <a class="padding lightblack" href="#">Projects</a>
-                |
-            </small>
-            <small>
-                <a class="padding lightblack" href="#">Contact</a>
-            </small>
-            <small>
-                <p class="pull-right lightblack">
-                    Copyright @ 2015. Tempelate by
-                    <a class="lightblack" href="#">
-                        <i>ABC</i>
-                    </a>
-                </p>
-            </small>
-        </div>
-    </div>
+    
     </div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="/airTicketBooking/js/pranav_js/jquery.min.js"></script>
