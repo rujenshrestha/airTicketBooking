@@ -61,12 +61,12 @@ java.util.Iterator toLocList = toLoc.getlocationList().iterator();
                       <td><table width="750"  border="0" cellspacing="0" cellpadding="0">
                         <tr>
                           <td width="200" height="19" bgcolor="#373948" class="titlelink"> &nbsp;<span class="title">&nbsp;Add Admin </span></td>
-                          <td width="550" bgcolor="" class="titlelink"> 
-                          	<font color="#FF0000">
+                          <td width="550" bgcolor="" class="titlelink">
+                          	<span style="color: #1CA347" >
 	                          	<%if(!msg.matches("")){ %>
 	                          	<%=msg %>
 	                          	<%} %>
-                           </font> 
+                           </span>
                           </td>
                          
                         </tr>
